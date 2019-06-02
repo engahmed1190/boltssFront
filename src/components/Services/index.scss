@@ -1,0 +1,32 @@
+@import "../../assets/styles/color-palette.scss";
+
+.services-parent {
+  background-image: linear-gradient($blue, $blue),
+    url("../../assets/images/services.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.services-wrapper {
+  padding: 36px 0px !important;
+  text-align: left;
+  &__heading {
+    font-weight: bold;
+    color: white;
+  }
+  &__body {
+    font-size: 20px;
+    color: white;
+  }
+  &__image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 30px auto;
+    background-color: white;
+  }
+  &__text {
+    color: white;
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../assets/styles/color-palette.scss";
+
+.projects-wrapper {
+  padding: 36px 0px !important;
+  text-align: left;
+  &__heading {
+    font-weight: bold;
+  }
+  &__body {
+    font-size: 20px;
+  }
+
+  &__card-img {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    vertical-align: middle;
+    border-style: none;
+    height: 150px;
+  }
+  &__card-text-heading {
+    font-weight: bold;
+  }
+}
