@@ -37,7 +37,7 @@ const Projects = () => (
 }
     `}
     render={data => {
-      const { html, frontmatter } = data.allMarkdownRemark.edges[0].node
+      const { title, content, firstProjectTitle, firstProjectContent, secondProjectTitle, secondProjectContent } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
         <Container className="projects-wrapper" id="projects">
@@ -45,8 +45,8 @@ const Projects = () => (
             <Col xs="12">
               <Row>
                 <Col xs="12" md="6">
-                  <h2 className="projects-wrapper__heading">{frontmatter.title.toUpperCase()}</h2>
-                  <h3 dangerouslySetInnerHTML={{ __html: html }} className="projects-wrapper__body">
+                  <h2 className="projects-wrapper__heading">{title.toUpperCase()}</h2>
+                  <h3 dangerouslySetInnerHTML={{ __html: content }} className="projects-wrapper__body">
                   </h3>
                 </Col>
                 <Col xs="12" md="6">
@@ -61,10 +61,10 @@ const Projects = () => (
                         />
                         <CardBody>
                           <CardTitle className="projects-wrapper__card-text-heading">
-                            {frontmatter.firstProjectTitle}
+                            {firstProjectTitle}
                           </CardTitle>
                           <CardText>
-                            {frontmatter.firstProjectContent}
+                            {firstProjectContent}
                           </CardText>
                           <CardLink href="#">READ MORE</CardLink>
                         </CardBody>
@@ -80,10 +80,10 @@ const Projects = () => (
                         />
                         <CardBody>
                           <CardTitle className="projects-wrapper__card-text-heading">
-                            {frontmatter.secondProjectTitle}
+                            {secondProjectTitle}
                           </CardTitle>
                           <CardText>
-                            {frontmatter.secondProjectContent}
+                            {secondProjectContent}
                           </CardText>
                           <CardLink href="#">READ MORE</CardLink>
                         </CardBody>

@@ -23,7 +23,7 @@ const Services = () => (
 }
     `}
     render={data => {
-      const { html, frontmatter } = data.allMarkdownRemark.edges[0].node
+      const { title, content, firstService, secondService } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
         <div className="services-parent">
@@ -32,8 +32,8 @@ const Services = () => (
               <Col xs="12">
                 <Row>
                   <Col xs="12" md="6">
-                    <h2 className="services-wrapper__heading">{frontmatter.title.toUpperCase()}</h2>
-                    <h3 dangerouslySetInnerHTML={{ __html: html }} className="services-wrapper__body">
+                    <h2 className="services-wrapper__heading">{title.toUpperCase()}</h2>
+                    <h3 dangerouslySetInnerHTML={{ __html: content }} className="services-wrapper__body">
                     </h3>
                   </Col>
                   <Col xs="12" md="6">
@@ -44,7 +44,7 @@ const Services = () => (
                         className="text-center services-wrapper__text"
                       >
                         <div className="services-wrapper__image" />
-                        {frontmatter.firstService}
+                        {firstService}
                       </Col>
                       <Col
                         xs="12"
@@ -52,7 +52,7 @@ const Services = () => (
                         className="text-center services-wrapper__text"
                       >
                         <div className="services-wrapper__image" />
-                        {frontmatter.secondService}
+                        {secondService}
                       </Col>
                     </Row>
                   </Col>
