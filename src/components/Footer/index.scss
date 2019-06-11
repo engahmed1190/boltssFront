@@ -1,0 +1,43 @@
+@import "../../assets/styles/color-palette.scss";
+@import "../../assets/styles/mixins.scss";
+
+.footer-wrapper {
+  width: 100%;
+  background-color: $dark-blue;
+  position: static;
+  bottom: 0;
+  height: 480px;
+}
+
+.footer-icon-button {
+  border-radius: 50%;
+  text-decoration: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  cursor: pointer;
+  background: white;
+
+  &:hover {
+    background: #d2cfcf;
+  }
+
+  &__icon {
+    width: 25px;
+  }
+}
+
+.footer-wrapper__data {
+  display: flex;
+  padding-top: 18px;
+  &__info {
+    width: 70%;
+    color: white;
+  }
+  &__social-media {
+    width: 30%;
+  }
+}
