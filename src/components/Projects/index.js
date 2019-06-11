@@ -23,9 +23,9 @@ const Projects = () => (
     edges {
       node {
         id
+        html
         frontmatter {
-          title
-          content
+          title          
           firstProjectTitle
           firstProjectContent
           secondProjectTitle
@@ -37,10 +37,7 @@ const Projects = () => (
 }
     `}
     render={data => {
-      const { title, content, firstProjectTitle,
-        firstProjectContent,
-        secondProjectTitle,
-        secondProjectContent } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { html, frontmatter } = data.allMarkdownRemark.edges[0].node
 
       return (
         <Container className="projects-wrapper" id="projects">
@@ -48,11 +45,9 @@ const Projects = () => (
             <Col xs="12">
               <Row>
                 <Col xs="12" md="6">
-                  <h2 className="projects-wrapper__heading">{title.toUpperCase()}</h2>
-                  <h3 className="projects-wrapper__body">
-                    {content}
+                  <h2 className="projects-wrapper__heading">{frontmatter.title.toUpperCase()}</h2>
+                  <h3 dangerouslySetInnerHTML={{ __html: html }} className="projects-wrapper__body">
                   </h3>
-
                 </Col>
                 <Col xs="12" md="6">
                   <Row>
@@ -66,10 +61,10 @@ const Projects = () => (
                         />
                         <CardBody>
                           <CardTitle className="projects-wrapper__card-text-heading">
-                            {firstProjectTitle}
+                            {frontmatter.firstProjectTitle}
                           </CardTitle>
                           <CardText>
-                            {firstProjectContent}
+                            {frontmatter.firstProjectContent}
                           </CardText>
                           <CardLink href="#">READ MORE</CardLink>
                         </CardBody>
@@ -85,10 +80,10 @@ const Projects = () => (
                         />
                         <CardBody>
                           <CardTitle className="projects-wrapper__card-text-heading">
-                            {secondProjectTitle}
+                            {frontmatter.secondProjectTitle}
                           </CardTitle>
                           <CardText>
-                            {secondProjectContent}
+                            {frontmatter.secondProjectContent}
                           </CardText>
                           <CardLink href="#">READ MORE</CardLink>
                         </CardBody>

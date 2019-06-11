@@ -1,0 +1,91 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+# This line should *not* be indented
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "why" # Used in routes, e.g., /admin/collections/blog
+    label: "Why" # Used in the UI
+    folder: "src/pages/md/home" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Content",
+          name: "content",
+          widget: "markdown",
+          required: true,
+        }
+      - {
+          label: "Video URL",
+          name: "videoUrl",
+          widget: "string",
+          required: true,
+        }
+
+  - name: "services" # Used in routes, e.g., /admin/collections/blog
+    label: "Services" # Used in the UI
+    folder: "src/pages/md/home" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Content",
+          name: "content",
+          widget: "markdown",
+          required: true,
+        }
+      - {
+          label: "First Service",
+          name: "firstService",
+          widget: "text",
+          required: true,
+        }
+      - {
+          label: "Second Service",
+          name: "secondService",
+          widget: "text",
+          required: true,
+        }
+
+  - name: "projects" # Used in routes, e.g., /admin/collections/blog
+    label: "Projects" # Used in the UI
+    folder: "src/pages/md/home" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Content",
+          name: "content",
+          widget: "markdown",
+          required: true,
+        }
+      - {
+          label: "First Project Title",
+          name: "firstProjectTitle",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "First Project Content",
+          name: "firstProjectContent",
+          widget: "text",
+          required: true,
+        }
+      - {
+          label: "Second Project Title",
+          name: "secondProjectTitle",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Second Project Content",
+          name: "secondProjectContent",
+          widget: "text",
+          required: true,
+        }

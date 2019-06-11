@@ -12,9 +12,9 @@ const Why = () => (
     edges {
       node {
         id
+        html
         frontmatter {
-          title
-          content
+          title          
           videoUrl
         }
       }
@@ -23,26 +23,26 @@ const Why = () => (
 }
     `}
     render={data => {
-      const { title, content, videoUrl } = data.allMarkdownRemark.edges[0].node.frontmatter
-
+      const { frontmatter, html } = data.allMarkdownRemark.edges[0].node
+      console.log('====================================');
+      console.log(data);
+      console.log('====================================');
       return (
         <Container className="why-wrapper" id="about">
           <Row>
             <Col xs="12">
               <Row>
                 <Col xs="12" md="6">
-                  <h2 className="why-wrapper__heading">{title.toUpperCase()}</h2>
-                  <h3 className="why-wrapper__body">
-                    {content}
+                  <h2 className="why-wrapper__heading">{frontmatter.title.toUpperCase()}</h2>
+                  <h3 dangerouslySetInnerHTML={{ __html: html }} className="why-wrapper__body">
                   </h3>
-
                 </Col>
                 <Col xs="12" md="6" className="text-center">
                   <iframe
                     width="550"
                     height="350"
                     title="bolt"
-                    src={videoUrl}
+                    src={frontmatter.videoUrl}
                   />
                 </Col>
               </Row>
