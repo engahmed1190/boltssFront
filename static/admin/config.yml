@@ -14,13 +14,9 @@ collections:
     folder: "src/pages/md/home/why" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in front matter
+      - { label: "Section", name: "section", widget: "hidden", default: "why" }
       - { label: "Title", name: "title", widget: "string", required: true }
-      - {
-          label: "Content",
-          name: "content",
-          widget: "markdown",
-          required: true,
-        }
+      - { label: "Content", name: "content", widget: "text", required: true }
       - {
           label: "Video URL",
           name: "videoUrl",
@@ -33,13 +29,14 @@ collections:
     folder: "src/pages/md/home/services" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in front matter
-      - { label: "Title", name: "title", widget: "string", required: true }
       - {
-          label: "Content",
-          name: "content",
-          widget: "markdown",
-          required: true,
+          label: "Section",
+          name: "section",
+          widget: "hidden",
+          default: "services",
         }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Content", name: "content", widget: "text", required: true }
       - {
           label: "First Service",
           name: "firstService",
@@ -58,13 +55,14 @@ collections:
     folder: "src/pages/md/home/projects" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in front matter
-      - { label: "Title", name: "title", widget: "string", required: true }
       - {
-          label: "Content",
-          name: "content",
-          widget: "markdown",
-          required: true,
+          label: "Section",
+          name: "section",
+          widget: "hidden",
+          default: "projects",
         }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Content", name: "content", widget: "text", required: true }
       - {
           label: "First Project Title",
           name: "firstProjectTitle",
