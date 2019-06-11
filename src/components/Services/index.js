@@ -11,11 +11,11 @@ const Services = () => (
     edges {
       node {
         id
-        html
         frontmatter {
           title          
           firstService
           secondService
+          content
         }
       }
     }

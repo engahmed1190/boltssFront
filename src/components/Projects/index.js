@@ -23,13 +23,13 @@ const Projects = () => (
     edges {
       node {
         id
-        html
         frontmatter {
           title          
           firstProjectTitle
           firstProjectContent
           secondProjectTitle
           secondProjectContent
+          content
         }
       }
     }

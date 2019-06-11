@@ -11,11 +11,11 @@ const Why = () => (
   allMarkdownRemark(filter: {frontmatter: {section: {eq: "why"}}}) {
     edges {
       node {
-        id
-        html
+        id        
         frontmatter {
           title          
           videoUrl
+          content
         }
       }
     }
