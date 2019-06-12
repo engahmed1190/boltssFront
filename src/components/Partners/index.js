@@ -1,4 +1,5 @@
 import React from "react";
+import Img from 'gatsby-image'
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "reactstrap";
 import Slider from "react-slick";
@@ -14,7 +15,16 @@ const Partners = () => (
         id
         frontmatter {
           title
-          image
+          image{
+              childImageSharp {
+                fluid(maxWidth: 700) {
+                  srcSet
+                  sizes
+                  aspectRatio
+                  src
+                }
+              }
+            }
         }
       }
     }
@@ -52,8 +62,8 @@ const Partners = () => (
                       >
                         <Slider {...settings}>
                           {partners ? partners.edges.map(partner => (
-                            <img
-                              src={require(partner.node.frontmatter.image)}
+                            <Img
+                              fluid={partner.node.frontmatter.image.childImageSharp.fluid}
                               className="slide-image"
                             />
                           )) : null}
