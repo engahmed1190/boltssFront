@@ -1,6 +1,5 @@
 ---
 section: partners
 title: bolt
-image: /images/logo.png
+logo: /uploads/logo.png
 ---
-

@@ -15,7 +15,7 @@ const Partners = () => (
         id
         frontmatter {
           title
-          image{
+          logo {
               childImageSharp {
                 fluid(maxWidth: 700) {
                   srcSet
@@ -63,7 +63,7 @@ const Partners = () => (
                         <Slider {...settings}>
                           {partners ? partners.edges.map(partner => (
                             <Img
-                              fluid={partner.node.frontmatter.image.childImageSharp.fluid}
+                              fluid={partner.node.frontmatter.logo.childImageSharp.fluid}
                               className="slide-image"
                             />
                           )) : null}
