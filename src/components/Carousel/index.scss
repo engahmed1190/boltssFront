@@ -3,8 +3,6 @@
 @import "../../assets/styles/mixins.scss";
 
 .carousel-wrapper {
-  //   width: 100vw !important;
-  //   max-width: 100vw !important;
   height: 60vh;
   max-height: 60vh;
   margin: 81px 0 0 0;
@@ -22,8 +20,8 @@
   }
 }
 .slick-list {
-  height: 60vh;
-  max-height: 60vh;
+  height: calc(100vh - 81px);
+  max-height: calc(100vh - 81px);
 }
 .slick-slide {
   @media (max-width: 900px) {
@@ -34,14 +32,9 @@
   }
 }
 
-.slick-next:before,
-.slick-prev:before {
-  // color: #e74c3c;
-}
-
 .slide-image {
   //   max-height: 100px;
-  height: 60vh !important;
+  // height: 85vh !important;
   object-fit: cover;
 
   @media screen and (max-width: 900px) {

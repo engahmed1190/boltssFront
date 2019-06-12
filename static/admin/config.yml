@@ -102,3 +102,21 @@ collections:
       - { label: "Email", name: "email", widget: "string", required: true }
       - { label: "Phone", name: "phone", widget: "string", required: true }
       - { label: "Address", name: "address", widget: "string", required: true }
+  
+  - name: "partners" # Used in routes, e.g., /admin/collections/blog
+    label: "Partners" # Used in the UI
+    folder: "src/pages/md/home/partners" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Section",
+          name: "section",
+          widget: "hidden",
+          default: "partners",
+        }
+      - { label: "Name", name: "name", widget: "string", required: true }
+      - { label: 'Image',
+          name: 'image',
+          widget: 'image',
+          required: true,
+          }      

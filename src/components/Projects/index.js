@@ -40,61 +40,63 @@ const Projects = () => (
       const { title, content, firstProjectTitle, firstProjectContent, secondProjectTitle, secondProjectContent } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
-        <Container className="projects-wrapper" id="projects">
-          <Row>
-            <Col xs="12">
-              <Row>
-                <Col xs="12" md="6">
-                  <h2 className="projects-wrapper__heading">{title.toUpperCase()}</h2>
-                  <h3 dangerouslySetInnerHTML={{ __html: content }} className="projects-wrapper__body">
-                  </h3>
-                </Col>
-                <Col xs="12" md="6">
-                  <Row>
-                    <Col xs="12" md="6">
-                      <Card>
-                        <div
-                          className="projects-wrapper__card-img"
-                          style={{
-                            backgroundImage: `url(${slide1})`
-                          }}
-                        />
-                        <CardBody>
-                          <CardTitle className="projects-wrapper__card-text-heading">
-                            {firstProjectTitle}
-                          </CardTitle>
-                          <CardText>
-                            {firstProjectContent}
-                          </CardText>
-                          <CardLink href="#">READ MORE</CardLink>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col xs="12" md="6">
-                      <Card>
-                        <div
-                          className="projects-wrapper__card-img"
-                          style={{
-                            backgroundImage: `url(${slide2})`
-                          }}
-                        />
-                        <CardBody>
-                          <CardTitle className="projects-wrapper__card-text-heading">
-                            {secondProjectTitle}
-                          </CardTitle>
-                          <CardText>
-                            {secondProjectContent}
-                          </CardText>
-                          <CardLink href="#">READ MORE</CardLink>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
+        <div className="projects-parent">
+          <Container className="projects-wrapper" id="projects">
+            <Row>
+              <Col xs="12">
+                <Row>
+                  <Col xs="12" md="6">
+                    <h2 className="projects-wrapper__heading">{title.toUpperCase()}</h2>
+                    <h3 dangerouslySetInnerHTML={{ __html: content }} className="projects-wrapper__body">
+                    </h3>
+                  </Col>
+                  <Col xs="12" md="6">
+                    <Row>
+                      <Col xs="12" md="6">
+                        <Card>
+                          <div
+                            className="projects-wrapper__card-img"
+                            style={{
+                              backgroundImage: `url(${slide1})`
+                            }}
+                          />
+                          <CardBody>
+                            <CardTitle className="projects-wrapper__card-text-heading">
+                              {firstProjectTitle}
+                            </CardTitle>
+                            <CardText>
+                              {firstProjectContent}
+                            </CardText>
+                            <CardLink href="#">READ MORE</CardLink>
+                          </CardBody>
+                        </Card>
+                      </Col>
+                      <Col xs="12" md="6">
+                        <Card>
+                          <div
+                            className="projects-wrapper__card-img"
+                            style={{
+                              backgroundImage: `url(${slide2})`
+                            }}
+                          />
+                          <CardBody>
+                            <CardTitle className="projects-wrapper__card-text-heading">
+                              {secondProjectTitle}
+                            </CardTitle>
+                            <CardText>
+                              {secondProjectContent}
+                            </CardText>
+                            <CardLink href="#">READ MORE</CardLink>
+                          </CardBody>
+                        </Card>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       )
     }}
   />

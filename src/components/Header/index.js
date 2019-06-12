@@ -14,8 +14,6 @@ import {
 
 import logo from "../../assets/images/logo.png";
 import arrowDown from "../../assets/images/arrow-down.svg";
-import engLogo from "../../assets/images/flag-english.png";
-import araLogo from "../../assets/images/flag-saudi-arabia.png";
 
 import "./index.scss";
 
@@ -90,13 +88,14 @@ class Header extends Component {
               </NavItem>
               <NavItem
                 className={`header__nav-item ${
-                  activeItem === "profile" ? "header__nav-item-active" : ""
+                  activeItem === "products" ? "header__nav-item-active" : ""
                   }`}
               >
-                <NavLink href="#projects" className="header__nav-link">
-                  PROJECTS
+                <NavLink href="#products" className="header__nav-link">
+                  PRODUCTS
                 </NavLink>
               </NavItem>
+
               <NavItem
                 className={`header__nav-item ${
                   activeItem === "matches" ? "header__nav-item-active" : ""
@@ -106,6 +105,27 @@ class Header extends Component {
                   SERVICES
                 </NavLink>
               </NavItem>
+
+              <NavItem
+                className={`header__nav-item ${
+                  activeItem === "profile" ? "header__nav-item-active" : ""
+                  }`}
+              >
+                <NavLink href="#projects" className="header__nav-link">
+                  PROJECTS
+                </NavLink>
+              </NavItem>
+
+              <NavItem
+                className={`header__nav-item ${
+                  activeItem === "profile" ? "header__nav-item-active" : ""
+                  }`}
+              >
+                <NavLink href="#projects" className="header__nav-link">
+                  PARTNERS
+                </NavLink>
+              </NavItem>
+
               <NavItem
                 className={`header__nav-item ${
                   activeItem === "quick-match" ? "header__nav-item-active" : ""
@@ -121,7 +141,7 @@ class Header extends Component {
                   }`}
               >
                 <NavLink href="#contact" className="header__nav-link">
-                  CONTACT
+                  CONTACT US
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown
@@ -130,25 +150,14 @@ class Header extends Component {
                 className="header__nav-item d-none d-md-block"
               >
                 <DropdownToggle nav caret className="header__nav-link">
-                  <img src={engLogo} alt="" className="header__nav-lang-flag" />
-                  English
+                  LANG
                 </DropdownToggle>
                 <DropdownMenu right className="header__nav-sub-menu">
                   <DropdownItem className="header__nav-sub-menu__item">
-                    <img
-                      src={engLogo}
-                      alt=""
-                      className="header__nav-lang-flag"
-                    />
                     English
                   </DropdownItem>
                   <DropdownItem divider className="header__nav-divider" />
                   <DropdownItem className="header__nav-sub-menu__item">
-                    <img
-                      src={araLogo}
-                      alt=""
-                      className="header__nav-lang-flag"
-                    />
                     العربية
                   </DropdownItem>
                 </DropdownMenu>
@@ -158,8 +167,7 @@ class Header extends Component {
                 onClick={this.toggle}
               >
                 <NavLink className="header__nav-link d-inline-flex justify-content-between">
-                  <img src={engLogo} alt="" className="header__nav-lang-flag" />
-                  English{" "}
+                  LANG
                   <img src={arrowDown} alt="" style={{ marginLeft: "8px" }} />
                 </NavLink>
               </NavItem>
@@ -174,21 +182,11 @@ class Header extends Component {
                 <Nav vertical>
                   <NavItem>
                     <NavLink href="#" className="header__nav-item-mobile">
-                      <img
-                        src={engLogo}
-                        alt=""
-                        className="header__nav-lang-flag"
-                      />
                       English
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink href="#" className="header__nav-item-mobile">
-                      <img
-                        src={araLogo}
-                        alt=""
-                        className="header__nav-lang-flag"
-                      />
                       العربية
                     </NavLink>
                   </NavItem>
