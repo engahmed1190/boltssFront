@@ -53,8 +53,7 @@ const Partners = () => (
                         <Slider {...settings}>
                           {partners ? partners.edges.map(partner => (
                             <img
-                              key={partner.node.frontmatter.title}
-                              fluid={require(partner.node.frontmatter.image)}
+                              src={require(partner.node.frontmatter.image)}
                               className="slide-image"
                             />
                           )) : null}

@@ -18,7 +18,7 @@ const IndexPage = () => (
     <Products />
     <Services />
     <Projects />
-    {/* <Partners /> */}
+    <Partners />
   </Layout>
 )
 
