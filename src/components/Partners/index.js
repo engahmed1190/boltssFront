@@ -2,7 +2,7 @@ import React from "react";
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "reactstrap";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "./index.scss";
 
 const Partners = () => (
@@ -33,16 +33,16 @@ const Partners = () => (
     `}
     render={data => {
       const { allMarkdownRemark: partners } = data
-      const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        arrows: false,
-        autoplaySpeed: 4000
-      };
+      // const settings = {
+      //   dots: false,
+      //   infinite: true,
+      //   speed: 500,
+      //   slidesToShow: 1,
+      //   slidesToScroll: 1,
+      //   autoplay: true,
+      //   arrows: false,
+      //   autoplaySpeed: 4000
+      // };
       return (
         <div className="partners-parent">
           <Container className="partners-wrapper" id="partners">
@@ -53,8 +53,22 @@ const Partners = () => (
                     <h2 className="partners-wrapper__heading">PARTNERS</h2>
                   </Col>
                   <Col xs="12" md="12">
-                    <Row>
-                      <Col
+                    <Row style={{ justifyContent: "center" }}>
+                      {partners.edges.map((partner, index) => (
+                        <Col
+                          xs="12"
+                          md="3"
+                          className="text-center partners-wrapper__text"
+                          id="partners-slides"
+                        >
+                          <Img
+                            key={index}
+                            fluid={partner.node.frontmatter.logo.childImageSharp.fluid}
+                            className="partners-slide-image"
+                          />
+                        </Col>
+                      ))}
+                      {/* <Col
                         xs="12"
                         md="12"
                         className="text-center partners-wrapper__text"
@@ -69,7 +83,7 @@ const Partners = () => (
                             />
                           ))}
                         </Slider>
-                      </Col>
+                      </Col> */}
                     </Row>
                   </Col>
                 </Row>
