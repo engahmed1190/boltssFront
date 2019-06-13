@@ -4,11 +4,11 @@ import {
   Container,
   Row,
   Col,
-  Form,
-  FormGroup,
-  Input,
-  Button,
-  Label
+  // Form,
+  // FormGroup,
+  // Input,
+  // Button,
+  // Label
 } from "reactstrap";
 import logo from "../../assets/images/logo.png";
 import map from "../../assets/images/map.png";
@@ -38,7 +38,7 @@ const Footer = () => (
 }
     `}
     render={data => {
-      const { email,phone,address } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { email, phone, address } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
         <div className="footer-wrapper" id="contact">
@@ -46,77 +46,34 @@ const Footer = () => (
             <Row>
               <Col xs="12">
                 <Row>
-                  <Col xs="12" md="3">
-                    <img src={logo} alt="logo" />
+                  <Col xs="12" md="6">
+                    <img src={logo} alt="logo" style={{ marginTop: "8px" }} />
                     <div className="footer-wrapper__data">
-                      <div className="footer-wrapper__data__info">
-                        <div style={{ marginBottom: "24px" }}>
-                          <strong>Email</strong>
-                          <p>{email}</p>
-                        </div>
-                        <div style={{ marginBottom: "24px" }}>
-                          <strong>Phone</strong>
-                          <p>{phone}</p>
-                        </div>
-                        <div style={{ marginBottom: "24px" }}>
-                          <strong>Address</strong>
-                          <p>{address}</p>
-                        </div>
+                      <div className="footer-wrapper__data__contact">
+                        <p className="footer-wrapper__data__contact__item">Home</p>
+                        <p className="footer-wrapper__data__contact__item">About us</p>
+                        <p className="footer-wrapper__data__contact__item">Products</p>
+                        <p className="footer-wrapper__data__contact__item">Services</p>
                       </div>
-                      <div className="footer-wrapper__data__social-media">
-                        <div className="footer-icon-button" role="button">
-                          <img
-                            src={facebookIcon}
-                            alt="facebook icon"
-                            className="icon-button__icon"
-                          />
-                        </div>
-                        <div className="footer-icon-button" role="button">
-                          <img
-                            src={twitterIcon}
-                            alt="facebook icon"
-                            className="icon-button__icon"
-                          />
-                        </div>
-                        <div className="footer-icon-button" role="button">
-                          <img
-                            src={linkedinIcon}
-                            alt="linkedin icon"
-                            className="icon-button__icon"
-                          />
-                        </div>
-                        <div className="footer-icon-button" role="button">
-                          <img
-                            src={youtubeIcon}
-                            alt="linkedin icon"
-                            className="icon-button__icon"
-                          />
-                        </div>
+                      <div className="footer-wrapper__data__contact">
+                        <p className="footer-wrapper__data__contact__item">Projects</p>
+                        <p className="footer-wrapper__data__contact__item">Partners</p>
+                        <p className="footer-wrapper__data__contact__item">Careers</p>
+                        <p className="footer-wrapper__data__contact__item">Contact Us</p>
                       </div>
+
                     </div>
+
                   </Col>
-                  <Col xs="12" md="5">
+                  <Col xs="12" md="6">
                     <img
                       src={map}
                       alt="map"
                       style={{ width: "100%", margin: "24px 0" }}
                     />
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        color: "white"
-                      }}
-                    >
-                      <p style={{ margin: "0 4px" }}>Home</p>
-                      <p style={{ margin: "0 4px" }}>About us</p>
-                      <p style={{ margin: "0 4px" }}>Projects</p>
-                      <p style={{ margin: "0 4px" }}>Services</p>
-                      <p style={{ margin: "0 4px" }}>Careers</p>
-                      <p style={{ margin: "0 4px" }}>Contact us</p>
-                    </div>
+
                   </Col>
-                  <Col xs="12" md="4" className="p-4 d-flex justify-content-center">
+                  {/* <Col xs="12" md="4" className="p-4 d-flex justify-content-center">
                     <Form
                       style={{
                         backgroundColor: "#216896",
@@ -169,7 +126,71 @@ const Footer = () => (
                         Sign Up
                 </Button>
                     </Form>
+                  </Col> */}
+                </Row>
+              </Col>
+              <Col xs="12">
+                <Row>
+                  <Col xs="12" md="6">
+
+                    <div className="footer-wrapper__data__social-media">
+                      <div className="footer-icon-button" role="button">
+                        <img
+                          src={facebookIcon}
+                          alt="facebook icon"
+                          className="icon-button__icon"
+                        />
+                      </div>
+                      <div className="footer-icon-button" role="button">
+                        <img
+                          src={twitterIcon}
+                          alt="facebook icon"
+                          className="icon-button__icon"
+                        />
+                      </div>
+                      <div className="footer-icon-button" role="button">
+                        <img
+                          src={linkedinIcon}
+                          alt="linkedin icon"
+                          className="icon-button__icon"
+                        />
+                      </div>
+                      <div className="footer-icon-button" role="button">
+                        <img
+                          src={youtubeIcon}
+                          alt="linkedin icon"
+                          className="icon-button__icon"
+                        />
+                      </div>
+                    </div>
                   </Col>
+                  <Col xs="12" md="6">
+                    <div className="footer-wrapper__data__info">
+                      <div style={{ width: "30%" }}>
+                        <strong>Email</strong>
+                        <p>{email}</p>
+                      </div>
+                      <div style={{ width: "30%" }}>
+                        <strong>Phone</strong>
+                        <p>{phone}</p>
+                      </div>
+                      <div style={{ width: "30%" }}>
+                        <strong>Address</strong>
+                        <p>{address}</p>
+                      </div>
+                    </div>
+
+                  </Col>
+
+                </Row>
+                <Row>
+                  <Col xs="12" md="12" className="footer-wrapper__data__rights">
+                    Copyright © {new Date().getFullYear()} BOLT.
+
+          All rights reserved.
+
+                  </Col>
+
                 </Row>
               </Col>
             </Row>
@@ -178,7 +199,7 @@ const Footer = () => (
       )
     }}
   />
-  
+
 );
 
 export default Footer;

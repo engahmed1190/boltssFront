@@ -3,8 +3,8 @@
 @import "../../assets/styles/mixins.scss";
 
 .carousel-wrapper {
-  height: 60vh;
-  max-height: 60vh;
+  height: calc(100vh - 81px);
+  // max-height: 60vh;
   margin: 81px 0 0 0;
   padding: 0 !important;
   position: relative;
@@ -19,7 +19,7 @@
     margin: 50px auto 50px auto !important;
   }
 }
-.slick-list {
+#home .carousel .slick-slider .slick-list {
   height: calc(100vh - 81px);
   max-height: calc(100vh - 81px);
 }
@@ -32,7 +32,7 @@
   }
 }
 
-.slide-image {
+.home-slide-image {
   //   max-height: 100px;
   // height: 85vh !important;
   object-fit: cover;
@@ -46,13 +46,13 @@
 
 .hero-data {
   position: absolute;
-  bottom: 0;
+  bottom: 20%;
   height: 30vh;
   width: 100%;
   display: flex;
   color: white;
   padding: 48px;
-  &__section1 {
+  &__section {
     width: 50%;
     h1 {
       font-size: 3.5rem;
@@ -62,20 +62,11 @@
       height: 60px;
     }
   }
-  &__section2 {
-    width: 50%;
-    position: relative;
-    button {
-      position: absolute;
-      bottom: 0;
-      left: 30%;
-      font-size: 2rem;
-      width: 200px;
-      height: 60px;
+  &__cta {
+    margin-left: 5%;
+    color: white;
+    &:hover {
       color: white;
-      &:hover {
-        color: white;
-      }
     }
   }
 }
@@ -104,5 +95,6 @@
 
   &__icon {
     width: 25px;
+    margin: 0 !important;
   }
 }

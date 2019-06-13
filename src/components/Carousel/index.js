@@ -16,7 +16,7 @@ const Carousel = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     arrows: false,
     autoplaySpeed: 4000
   };
@@ -24,12 +24,12 @@ const Carousel = () => {
     <div id="home" className="carousel-wrapper">
       <div className="carousel">
         <Slider {...settings}>
-          <img src={slide1} alt="slide1" className="slide-image" />
-          <img src={slide2} alt="slide2" className="slide-image" />
+          <img src={slide1} alt="slide1" className="home-slide-image" />
+          <img src={slide2} alt="slide2" className="home-slide-image" />
         </Slider>
       </div>
       <div className="hero-data">
-        <div className="hero-data__section1">
+        <div className="hero-data__section">
           <h1>
             We're Leading in
             <br /> smart Technology
@@ -37,36 +37,34 @@ const Carousel = () => {
           <Button color="primary" size="lg">
             About Us
           </Button>
-        </div>
-        <div className="hero-data__section2">
-          <Button color="warning" size="lg">
+          <Button color="warning" size="lg" className="hero-data__cta">
             CTA
           </Button>
         </div>
       </div>
       <div className="social-media-wrapper">
-        <div className="icon-button icon-button" role="button">
+        <div className="icon-button" role="button">
           <img
             src={facebookIcon}
             alt="facebook icon"
             className="icon-button__icon"
           />
         </div>
-        <div className="icon-button icon-button" role="button">
+        <div className="icon-button" role="button">
           <img
             src={twitterIcon}
             alt="facebook icon"
             className="icon-button__icon"
           />
         </div>
-        <div className="icon-button icon-button" role="button">
+        <div className="icon-button" role="button">
           <img
             src={linkedinIcon}
             alt="linkedin icon"
             className="icon-button__icon"
           />
         </div>
-        <div className="icon-button icon-button" role="button">
+        <div className="icon-button" role="button">
           <img
             src={youtubeIcon}
             alt="linkedin icon"

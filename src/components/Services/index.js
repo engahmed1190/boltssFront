@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "reactstrap";
+
 import "./index.scss";
 
 const Services = () => (
@@ -15,6 +16,7 @@ const Services = () => (
           title          
           firstService
           secondService
+          thirdService
           content
         }
       }
@@ -23,7 +25,7 @@ const Services = () => (
 }
     `}
     render={data => {
-      const { title, content, firstService, secondService } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { title, content, firstService, secondService, thirdService } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
         <div className="services-parent">
@@ -40,7 +42,7 @@ const Services = () => (
                     <Row>
                       <Col
                         xs="12"
-                        md="6"
+                        md="4"
                         className="text-center services-wrapper__text"
                       >
                         <div className="services-wrapper__image" />
@@ -48,11 +50,19 @@ const Services = () => (
                       </Col>
                       <Col
                         xs="12"
-                        md="6"
+                        md="4"
                         className="text-center services-wrapper__text"
                       >
                         <div className="services-wrapper__image" />
                         {secondService}
+                      </Col>
+                      <Col
+                        xs="12"
+                        md="4"
+                        className="text-center services-wrapper__text"
+                      >
+                        <div className="services-wrapper__image" />
+                        {thirdService}
                       </Col>
                     </Row>
                   </Col>

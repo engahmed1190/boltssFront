@@ -33,43 +33,42 @@ const Partners = () => (
     `}
     render={data => {
       const { allMarkdownRemark: partners } = data
-
       const settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         autoplay: true,
         arrows: false,
         autoplaySpeed: 4000
       };
       return (
-        <div className="services-parent">
-          <Container className="services-wrapper" id="services">
+        <div className="partners-parent">
+          <Container className="partners-wrapper" id="partners">
             <Row>
               <Col xs="12">
                 <Row>
-                  <Col xs="12" md="6">
-                    <h2 className="services-wrapper__heading">PARTNERS</h2>
+                  <Col xs="12" md="12">
+                    <h2 className="partners-wrapper__heading">PARTNERS</h2>
                   </Col>
-                  <Col xs="12" md="6">
+                  <Col xs="12" md="12">
                     <Row>
                       <Col
                         xs="12"
                         md="12"
-                        className="text-center services-wrapper__text"
+                        className="text-center partners-wrapper__text"
                       >
                         <Slider {...settings}>
-                          {partners ? partners.edges.map(partner => (
+                          {partners.edges.map((partner, index) => (
                             <Img
+                              key={index}
                               fluid={partner.node.frontmatter.logo.childImageSharp.fluid}
-                              className="slide-image"
+                              className="partners-slide-image"
                             />
-                          )) : null}
+                          ))}
                         </Slider>
                       </Col>
-
                     </Row>
                   </Col>
                 </Row>

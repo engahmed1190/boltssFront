@@ -17,7 +17,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 8px;
+  margin-top: 8px;
+  margin-right: 16px;
   cursor: pointer;
   background: white;
 
@@ -34,10 +35,28 @@
   display: flex;
   padding-top: 18px;
   &__info {
-    width: 70%;
+    width: 100%;
     color: white;
+    display: flex;
+  }
+  &__contact {
+    width: 50%;
+    &__item {
+      color: white;
+      margin-bottom: 20px;
+    }
   }
   &__social-media {
-    width: 30%;
+    // width: 30%;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+  }
+  &__rights {
+    color: white;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

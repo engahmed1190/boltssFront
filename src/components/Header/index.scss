@@ -2,7 +2,7 @@
 @import "../../assets/styles/mixins.scss";
 
 .header {
-  background: $primary !important;
+  background: black !important;
   z-index: 1000 !important;
   position: fixed !important;
   top: 0;
@@ -27,12 +27,13 @@
     height: 100%;
     color: white !important;
     padding: 0 8px;
+    margin: 0;
     cursor: pointer;
     border-bottom: 1px solid transparent;
     transition: all 0.2s ease;
     &:hover {
       transition: all 0.2s ease;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid $primary;
     }
   }
 
@@ -41,6 +42,9 @@
     height: 100%;
     align-items: center;
     display: flex;
+    &:hover {
+      color: $primary !important;
+    }
   }
 
   &__nav-item-mobile {
@@ -52,13 +56,25 @@
     width: 20px;
   }
 
+  &__nav-sub-menu {
+    background-color: black;
+
+    &__item {
+      color: white !important;
+      &:hover {
+        background-color: black !important;
+        color: $primary !important;
+      }
+    }
+  }
+
   &__logo {
     position: absolute;
     top: 0;
     left: 0;
     height: 81px;
+    // background-color: white;
 
-    background-color: white;
     &--img {
       width: 80%;
       padding: 10px;

@@ -6,6 +6,7 @@ import Products from "../components/Products";
 import Services from "../components/Services";
 import Projects from "../components/Projects";
 import Partners from "../components/Partners";
+import Careers from "../components/Careers";
 import SEO from "../components/seo"
 
 import "./index.scss";
@@ -19,6 +20,7 @@ const IndexPage = () => (
     <Services />
     <Projects />
     <Partners />
+    <Careers />
   </Layout>
 )
 
