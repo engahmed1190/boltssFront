@@ -26,16 +26,17 @@
     margin: 30px auto;
     background-color: #eee;
   }
-  &__text {
-    // color: white;
-  }
 }
 
 .partners-slide-image {
-  width: 30% !important;
+  width: 200px !important;
   @media screen and (max-width: 900px) {
     max-height: 150px !important;
     width: 80%;
     max-width: 80%;
   }
+}
+
+#partners-slides .slick-slider .slick-list .slick-track .slick-slide {
+  height: 150px !important;
 }

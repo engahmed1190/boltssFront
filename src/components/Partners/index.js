@@ -58,6 +58,7 @@ const Partners = () => (
                         xs="12"
                         md="12"
                         className="text-center partners-wrapper__text"
+                        id="partners-slides"
                       >
                         <Slider {...settings}>
                           {partners.edges.map((partner, index) => (

@@ -116,8 +116,8 @@ collections:
           default: "partners",
         }
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: 'Image',
-          name: 'image',
+      - { label: 'Logo',
+          name: 'logo',
           widget: 'image',
           required: true,
           }      
