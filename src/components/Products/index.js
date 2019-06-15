@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "reactstrap";
 import "./index.scss";
 
-const Products = () => (
+const Products = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
       query ProductsQuery {
@@ -13,9 +13,13 @@ const Products = () => (
         id
         frontmatter {
           title          
-          firstService
-          secondService
+          firstProduct
+          secondProduct
           content
+          arabicTitle          
+          arabicFirstProduct
+          arabicSecondProduct
+          arabicContent
         }
       }
     }
@@ -23,42 +27,48 @@ const Products = () => (
 }
     `}
     render={data => {
-      const { title, content, firstService, secondService } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { title, firstProduct,
+        secondProduct,
+        content,
+        arabicTitle,
+        arabicFirstProduct,
+        arabicSecondProduct,
+        arabicContent } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
-        <div className="products-parent">
-          <Container className="products-wrapper" id="products">
+        <div className="products-parent" id="products">
+          <Container className={`products-wrapper ${lang === "en" ? "" : "products-wrapper__ar"}`}>
+
+
             <Row>
-              <Col xs="12">
+              <Col xs="12" md="6">
+                <h2 className="products-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
+                <h3 dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="products-wrapper__body">
+                </h3>
+              </Col>
+              <Col xs="12" md="6">
                 <Row>
-                  <Col xs="12" md="6">
-                    <h2 className="products-wrapper__heading">{title.toUpperCase()}</h2>
-                    <h3 dangerouslySetInnerHTML={{ __html: content }} className="products-wrapper__body">
-                    </h3>
+                  <Col
+                    xs="12"
+                    md="6"
+                    className="text-center products-wrapper__text"
+                  >
+                    <div className="products-wrapper__image" />
+                    {lang === "en" ? firstProduct : arabicFirstProduct}
                   </Col>
-                  <Col xs="12" md="6">
-                    <Row>
-                      <Col
-                        xs="12"
-                        md="6"
-                        className="text-center products-wrapper__text"
-                      >
-                        <div className="products-wrapper__image" />
-                        {firstService}
-                      </Col>
-                      <Col
-                        xs="12"
-                        md="6"
-                        className="text-center products-wrapper__text"
-                      >
-                        <div className="products-wrapper__image" />
-                        {secondService}
-                      </Col>
-                    </Row>
+                  <Col
+                    xs="12"
+                    md="6"
+                    className="text-center products-wrapper__text"
+                  >
+                    <div className="products-wrapper__image" />
+                    {lang === "en" ? secondProduct : arabicSecondProduct}
                   </Col>
                 </Row>
               </Col>
+
             </Row>
+
           </Container>
         </div>
       )

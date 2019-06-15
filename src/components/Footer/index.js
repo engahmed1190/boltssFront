@@ -19,7 +19,7 @@ import youtubeIcon from "../../assets/images/youtube.svg";
 
 import "./index.scss";
 
-const Footer = () => (
+const Footer = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
       query FooterQuery {
@@ -31,6 +31,7 @@ const Footer = () => (
           email
           phone
           address
+          arabicAddress
         }
       }
     }
@@ -38,7 +39,7 @@ const Footer = () => (
 }
     `}
     render={data => {
-      const { email, phone, address } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { email, phone, address, arabicAddress } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
         <div className="footer-wrapper" id="contact">
@@ -50,16 +51,16 @@ const Footer = () => (
                     <img src={logo} alt="logo" style={{ marginTop: "8px" }} />
                     <div className="footer-wrapper__data">
                       <div className="footer-wrapper__data__contact">
-                        <p className="footer-wrapper__data__contact__item">Home</p>
-                        <p className="footer-wrapper__data__contact__item">About us</p>
-                        <p className="footer-wrapper__data__contact__item">Products</p>
-                        <p className="footer-wrapper__data__contact__item">Services</p>
+                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "HOME" : "الرئيسية"}</p>
+                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "ABOUT US" : "عننا"}</p>
+                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "PRODUCTS" : "منتجاتنا"}</p>
+                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "SERVICES" : "خدماتنا"}</p>
                       </div>
                       <div className="footer-wrapper__data__contact">
-                        <p className="footer-wrapper__data__contact__item">Projects</p>
-                        <p className="footer-wrapper__data__contact__item">Partners</p>
-                        <p className="footer-wrapper__data__contact__item">Careers</p>
-                        <p className="footer-wrapper__data__contact__item">Contact Us</p>
+                        <p className="footer-wrapper__data__contact__item"> {lang === "en" ? "PROJECTS" : "مشروعتنا"}</p>
+                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "PARTNERS" : "شركائنا"}</p>
+                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "CAREERS" : "الوظائف"}</p>
+                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "CONTACT US" : "اتصل بنا"}</p>
                       </div>
 
                     </div>
@@ -166,17 +167,17 @@ const Footer = () => (
                   </Col>
                   <Col xs="12" md="6">
                     <div className="footer-wrapper__data__info">
-                      <div style={{ width: "30%" }}>
-                        <strong>Email</strong>
+                      <div className="footer-wrapper__data__info__item">
+                        <strong>{lang === "en" ? "Email" : "البريد الالكترونى"}</strong>
                         <p>{email}</p>
                       </div>
-                      <div style={{ width: "30%" }}>
-                        <strong>Phone</strong>
+                      <div className="footer-wrapper__data__info__item">
+                        <strong>{lang === "en" ? "Phone" : "التليفون"}</strong>
                         <p>{phone}</p>
                       </div>
-                      <div style={{ width: "30%" }}>
-                        <strong>Address</strong>
-                        <p>{address}</p>
+                      <div className="footer-wrapper__data__info__item">
+                        <strong>{lang === "en" ? "Address" : "العنوان"}</strong>
+                        <p>{lang === "en" ? address : arabicAddress}</p>
                       </div>
                     </div>
 
@@ -185,9 +186,11 @@ const Footer = () => (
                 </Row>
                 <Row>
                   <Col xs="12" md="12" className="footer-wrapper__data__rights">
-                    Copyright © {new Date().getFullYear()} BOLT.
+                    {lang === "en" ? `Copyright © ${new Date().getFullYear()} BOLT.
 
-          All rights reserved.
+          All rights reserved.`: `${new Date().getFullYear()} ©  BOLT.
+
+          جميع الحقوق محفوظة.`}
 
                   </Col>
 

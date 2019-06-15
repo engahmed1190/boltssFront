@@ -5,7 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 // import Slider from "react-slick";
 import "./index.scss";
 
-const Partners = () => (
+const Partners = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
       query PartnersQuery {
@@ -44,31 +44,29 @@ const Partners = () => (
       //   autoplaySpeed: 4000
       // };
       return (
-        <div className="partners-parent">
-          <Container className="partners-wrapper" id="partners">
-            <Row>
-              <Col xs="12">
-                <Row>
-                  <Col xs="12" md="12">
-                    <h2 className="partners-wrapper__heading">PARTNERS</h2>
+        <div className="partners-parent" id="partners">
+          <Container className={`partners-wrapper ${lang === "en" ? "" : "partners-wrapper__ar"}`} >
+
+            <Col xs="12" md="12">
+              <h2 className="partners-wrapper__heading">{lang === "en" ? "PARTNERS" : "شركائنا"}</h2>
+            </Col>
+            <Col xs="12" md="12">
+              <Row style={{ justifyContent: "center" }}>
+                {partners.edges.map((partner, index) => (
+                  <Col
+                    xs="12"
+                    md="3"
+                    className="text-center partners-wrapper__image-wrapper"
+                    id="partners-slides"
+                    key={index}
+                  >
+                    <Img
+                      fluid={partner.node.frontmatter.logo.childImageSharp.fluid}
+                      className="partners-slide-image"
+                    />
                   </Col>
-                  <Col xs="12" md="12">
-                    <Row style={{ justifyContent: "center" }}>
-                      {partners.edges.map((partner, index) => (
-                        <Col
-                          xs="12"
-                          md="3"
-                          className="text-center partners-wrapper__text"
-                          id="partners-slides"
-                        >
-                          <Img
-                            key={index}
-                            fluid={partner.node.frontmatter.logo.childImageSharp.fluid}
-                            className="partners-slide-image"
-                          />
-                        </Col>
-                      ))}
-                      {/* <Col
+                ))}
+                {/* <Col
                         xs="12"
                         md="12"
                         className="text-center partners-wrapper__text"
@@ -84,11 +82,9 @@ const Partners = () => (
                           ))}
                         </Slider>
                       </Col> */}
-                    </Row>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
+              </Row>
+            </Col>
+
           </Container>
         </div>
       )

@@ -1,4 +1,5 @@
 @import "../../assets/styles/color-palette.scss";
+@import "../../assets/styles/mixins.scss";
 
 .partners-parent {
   // background-image: linear-gradient($blue, $blue),
@@ -9,8 +10,15 @@
 }
 
 .partners-wrapper {
-  padding: 36px 0px !important;
+  padding-top: 81px !important;
   text-align: left;
+  @include is-mobile {
+    padding-top: 56px !important;
+  }
+  &__ar {
+    direction: rtl;
+    text-align: right;
+  }
   &__heading {
     font-weight: bold;
     // color: white;
@@ -25,6 +33,11 @@
     height: 200px;
     margin: 30px auto;
     background-color: #eee;
+  }
+  &__image-wrapper {
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 }
 

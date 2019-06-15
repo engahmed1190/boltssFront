@@ -1,10 +1,22 @@
+@import "../../assets/styles/mixins.scss";
+
 .why-wrapper {
-  padding: 36px 0px !important;
+  padding-top: 81px !important;
   text-align: left;
+  @include is-mobile {
+    padding-top: 56px !important;
+  }
+  &__ar {
+    direction: rtl;
+    text-align: right;
+  }
   &__heading {
     font-weight: bold;
   }
   &__body {
     font-size: 20px;
+    @include is-mobile {
+      font-size: 16px;
+    }
   }
 }

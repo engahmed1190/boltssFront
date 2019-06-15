@@ -4,7 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 import careers from "../../assets/images/careers.webp"
 import "./index.scss";
 
-const Careers = () => (
+const Careers = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
       query CareersQuery {
@@ -12,8 +12,7 @@ const Careers = () => (
     edges {
       node {
         id
-        frontmatter {
-          title
+        frontmatter {          
           email
         }
       }
@@ -22,24 +21,22 @@ const Careers = () => (
 }
     `}
     render={data => {
-      const { title, email } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { email } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
         <div className="careers-parent">
-          <Container className="careers-wrapper" id="careers">
+          <Container className={`careers-wrapper ${lang === "en" ? "" : "careers-wrapper__ar"}`} id="careers">
             <Row>
-              <Col xs="12">
-                <Row>
-                  <Col xs="12" md="6">
-                    <h2 className="careers-wrapper__heading">{title.toUpperCase()}</h2>
-                    <div style={{ height: "30%", width: "100%",fontSize:"1.5rem",lineHeight:"50px" }} >
-                        If you want to build a successful career and be part of our talented team, Please send your resume to <strong>{email}     </strong>                 
-                    </div>
-                  </Col>
-                  <Col xs="12" md="6">
-                    <img src={careers} alt="careers" style={{ width: "80%" }} />
-                  </Col>
-                </Row>
+              <Col xs="12" md="6">
+                <h2 className="careers-wrapper__heading">{lang === "en" ? "CAREERS" : "الوظائف"}</h2>
+                <div className="careers-wrapper__body">
+                  {lang === "en" ? <span>If you want to build a successful career and be part of our talented team, Please send your resume to <strong>{email}</strong></span> : <span>
+                    اذا اردت ان تبنى مستقبل الوظيفى و تكون من اعضاء فريقنا الموهوبين، من فضلك ارسل سيرتك الذاتية على البريد الالكترونى <strong>{email}</strong>
+                  </span>}
+                </div>
+              </Col>
+              <Col xs="12" md="6" className="careers-wrapper__image-wrapper">
+                <img src={careers} alt="careers" className="careers-wrapper__image" />
               </Col>
             </Row>
           </Container>

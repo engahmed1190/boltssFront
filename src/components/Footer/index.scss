@@ -7,6 +7,13 @@
   position: static;
   bottom: 0;
   height: 480px;
+  &__ar {
+    direction: rtl;
+    text-align: right;
+  }
+  @include is-mobile {
+    height: fit-content;
+  }
 }
 
 .footer-icon-button {
@@ -38,6 +45,17 @@
     width: 100%;
     color: white;
     display: flex;
+    @include is-mobile {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+    }
+    &__item {
+      width: 30%;
+      @include is-mobile {
+        width: 100%;
+      }
+    }
   }
   &__contact {
     width: 50%;
@@ -49,8 +67,10 @@
   &__social-media {
     // width: 30%;
     display: flex;
-    // justify-content: center;
     align-items: center;
+    @include is-mobile {
+      justify-content: flex-end;
+    }
   }
   &__rights {
     color: white;
@@ -58,5 +78,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include is-mobile {
+      text-align: center;
+    }
   }
 }

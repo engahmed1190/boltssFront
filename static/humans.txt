@@ -1,8 +1,8 @@
 /* PROJECT */
 
-	Site Name:   Mai Magdy Portfolio
-	Site URL:    https://maimagdy.me
-	Created:     2019/02/15
+	Site Name:   Bolt
+	Site URL:    
+	Created:     2019/07/1
 	Standards:   HTML5, CSS3, Javascript
 	Software:    GatsbyJS
 	Web Design:  Mohamed Magdy

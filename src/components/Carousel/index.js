@@ -9,7 +9,7 @@ import twitterIcon from "../../assets/images/twitter.svg";
 import youtubeIcon from "../../assets/images/youtube.svg";
 import "./index.scss";
 
-const Carousel = () => {
+const Carousel = ({ lang = "en" }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -35,10 +35,10 @@ const Carousel = () => {
             <br /> smart Technology
           </h1>
           <Button color="primary" size="lg">
-            About Us
+            {lang === "en" ? "About Us" : "من نحن"}
           </Button>
           <Button color="warning" size="lg" className="hero-data__cta">
-            CTA
+            {lang === "en" ? "CTA" : "CTA"}
           </Button>
         </div>
       </div>
@@ -72,6 +72,7 @@ const Carousel = () => {
           />
         </div>
       </div>
+      <a href="#why" className="scroll-down" address="true" />
     </div>
   );
 };

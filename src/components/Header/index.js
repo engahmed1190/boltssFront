@@ -11,7 +11,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-
+import { Link } from "gatsby"
 import logo from "../../assets/images/logo.png";
 import arrowDown from "../../assets/images/arrow-down.svg";
 
@@ -52,7 +52,7 @@ class Header extends Component {
     this.setState(state => ({ collapse: !state.collapse }));
   };
   render() {
-    const { activeItem } = this.props;
+    const { activeItem, lang } = this.props;
     return (
       <div>
         <Navbar light expand="md" className="header">
@@ -74,7 +74,7 @@ class Header extends Component {
                   }`}
               >
                 <NavLink href="#home" className="header__nav-link">
-                  HOME
+                  {lang === "en" ? "HOME" : "الرئيسية"}
                 </NavLink>
               </NavItem>
               <NavItem
@@ -82,8 +82,8 @@ class Header extends Component {
                   activeItem === "members" ? "header__nav-item-active" : ""
                   }`}
               >
-                <NavLink href="#about" className="header__nav-link">
-                  ABOUT US
+                <NavLink href="#why" className="header__nav-link">
+                  {lang === "en" ? "ABOUT US" : "عننا"}
                 </NavLink>
               </NavItem>
               <NavItem
@@ -92,7 +92,7 @@ class Header extends Component {
                   }`}
               >
                 <NavLink href="#products" className="header__nav-link">
-                  PRODUCTS
+                  {lang === "en" ? "PRODUCTS" : "منتجاتنا"}
                 </NavLink>
               </NavItem>
 
@@ -102,7 +102,7 @@ class Header extends Component {
                   }`}
               >
                 <NavLink href="#services" className="header__nav-link">
-                  SERVICES
+                  {lang === "en" ? "SERVICES" : "خدماتنا"}
                 </NavLink>
               </NavItem>
 
@@ -112,7 +112,7 @@ class Header extends Component {
                   }`}
               >
                 <NavLink href="#projects" className="header__nav-link">
-                  PROJECTS
+                  {lang === "en" ? "PROJECTS" : "مشروعتنا"}
                 </NavLink>
               </NavItem>
 
@@ -121,8 +121,8 @@ class Header extends Component {
                   activeItem === "profile" ? "header__nav-item-active" : ""
                   }`}
               >
-                <NavLink href="#projects" className="header__nav-link">
-                  PARTNERS
+                <NavLink href="#partners" className="header__nav-link">
+                  {lang === "en" ? "PARTNERS" : "شركائنا"}
                 </NavLink>
               </NavItem>
 
@@ -131,8 +131,8 @@ class Header extends Component {
                   activeItem === "quick-match" ? "header__nav-item-active" : ""
                   }`}
               >
-                <NavLink href="#home" className="header__nav-link">
-                  CAREERS
+                <NavLink href="#careers" className="header__nav-link">
+                  {lang === "en" ? "CAREERS" : "الوظائف"}
                 </NavLink>
               </NavItem>
               <NavItem
@@ -141,25 +141,29 @@ class Header extends Component {
                   }`}
               >
                 <NavLink href="#contact" className="header__nav-link">
-                  CONTACT US
+                  {lang === "en" ? "CONTACT US" : "اتصل بنا"}
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown
-                nav
+                nav 
                 inNavbar
                 className="header__nav-item d-none d-md-block"
               >
                 <DropdownToggle nav caret className="header__nav-link">
-                  LANG
+                  {lang === "en" ? "LANG" : "اللغة"}
                 </DropdownToggle>
                 <DropdownMenu right className="header__nav-sub-menu">
-                  <DropdownItem className="header__nav-sub-menu__item">
-                    English
+                  <Link to="/">
+                    <DropdownItem className="header__nav-sub-menu__item">
+                      English
                   </DropdownItem>
+                  </Link>
                   <DropdownItem divider className="header__nav-divider" />
-                  <DropdownItem className="header__nav-sub-menu__item">
-                    العربية
+                  <Link to="/ar">
+                    <DropdownItem className="header__nav-sub-menu__item">
+                      العربية
                   </DropdownItem>
+                  </Link>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem
@@ -180,16 +184,20 @@ class Header extends Component {
                 onExited={this.onExited}
               >
                 <Nav vertical>
-                  <NavItem>
-                    <NavLink href="#" className="header__nav-item-mobile">
-                      English
+                  <Link to="/">
+                    <NavItem>
+                      <NavLink href="#" className="header__nav-item-mobile">
+                        English
                     </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="#" className="header__nav-item-mobile">
-                      العربية
+                    </NavItem>
+                  </Link>
+                  <Link to="/ar">
+                    <NavItem>
+                      <NavLink href="#" className="header__nav-item-mobile">
+                        العربية
                     </NavLink>
-                  </NavItem>
+                    </NavItem>
+                  </Link>
                 </Nav>
               </Collapse>
             </Nav>

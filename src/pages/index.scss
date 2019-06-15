@@ -1,3 +1,5 @@
+@import "../assets/styles/mixins.scss";
+
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
@@ -14,4 +16,11 @@ html {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.row {
+  width: 100% !important;
+   @include is-mobile {
+      margin: 0 !important
+    }
 }

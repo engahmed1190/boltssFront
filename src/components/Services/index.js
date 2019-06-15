@@ -4,7 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 
 import "./index.scss";
 
-const Services = () => (
+const Services = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
       query ServicesQuery {
@@ -18,6 +18,11 @@ const Services = () => (
           secondService
           thirdService
           content
+          arabicTitle          
+          arabicFirstService
+          arabicSecondService
+          arabicThirdService
+          arabicContent
         }
       }
     }
@@ -25,46 +30,47 @@ const Services = () => (
 }
     `}
     render={data => {
-      const { title, content, firstService, secondService, thirdService } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { title, content, firstService, secondService, thirdService, arabicTitle,
+        arabicFirstService,
+        arabicSecondService,
+        arabicThirdService,
+        arabicContent } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
-        <div className="services-parent">
-          <Container className="services-wrapper" id="services">
+        <div className="services-parent" id="services">
+          <Container className={`services-wrapper ${lang === "en" ? "" : "services-wrapper__ar"}`} >
+
             <Row>
-              <Col xs="12">
+              <Col xs="12" md="6">
+                <h2 className="services-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
+                <h3 dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="services-wrapper__body">
+                </h3>
+              </Col>
+              <Col xs="12" md="6">
                 <Row>
-                  <Col xs="12" md="6">
-                    <h2 className="services-wrapper__heading">{title.toUpperCase()}</h2>
-                    <h3 dangerouslySetInnerHTML={{ __html: content }} className="services-wrapper__body">
-                    </h3>
+                  <Col
+                    xs="12"
+                    md="4"
+                    className="text-center services-wrapper__text"
+                  >
+                    <div className="services-wrapper__image" />
+                    {lang === "en" ? firstService : arabicFirstService}
                   </Col>
-                  <Col xs="12" md="6">
-                    <Row>
-                      <Col
-                        xs="12"
-                        md="4"
-                        className="text-center services-wrapper__text"
-                      >
-                        <div className="services-wrapper__image" />
-                        {firstService}
-                      </Col>
-                      <Col
-                        xs="12"
-                        md="4"
-                        className="text-center services-wrapper__text"
-                      >
-                        <div className="services-wrapper__image" />
-                        {secondService}
-                      </Col>
-                      <Col
-                        xs="12"
-                        md="4"
-                        className="text-center services-wrapper__text"
-                      >
-                        <div className="services-wrapper__image" />
-                        {thirdService}
-                      </Col>
-                    </Row>
+                  <Col
+                    xs="12"
+                    md="4"
+                    className="text-center services-wrapper__text"
+                  >
+                    <div className="services-wrapper__image" />
+                    {lang === "en" ? secondService : arabicSecondService}
+                  </Col>
+                  <Col
+                    xs="12"
+                    md="4"
+                    className="text-center services-wrapper__text"
+                  >
+                    <div className="services-wrapper__image" />
+                    {lang === "en" ? thirdService : arabicThirdService}
                   </Col>
                 </Row>
               </Col>

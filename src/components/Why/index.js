@@ -4,7 +4,13 @@ import { Container, Row, Col } from "reactstrap";
 
 import "./index.scss";
 
-const Why = () => (
+function detectScreenWidthChange() {
+  const screenWidth = window.matchMedia("(min-width: 767px)");
+  if (screenWidth.matches) return 550;
+  else return 320;
+}
+
+const Why = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
       query WhyQuery {
@@ -13,9 +19,11 @@ const Why = () => (
       node {
         id        
         frontmatter {
-          title          
+          title
+          arabicTitle          
           videoUrl
           content
+          arabicContent
         }
       }
     }
@@ -23,29 +31,27 @@ const Why = () => (
 }
     `}
     render={data => {
-      const { title, content, videoUrl } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { title, arabicTitle, content, arabicContent, videoUrl } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
-        <Container className="why-wrapper" id="about">
+        <Container className={`why-wrapper ${lang === "en" ? "" : "why-wrapper__ar"}`} id="why">
           <Row>
-            <Col xs="12">
-              <Row>
-                <Col xs="12" md="6">
-                  <h2 className="why-wrapper__heading">{title.toUpperCase()}</h2>
-                  <h3 dangerouslySetInnerHTML={{ __html: content }} className="why-wrapper__body">
-                  </h3>
-                </Col>
-                <Col xs="12" md="6" className="text-center">
-                  <iframe
-                    width="550"
-                    height="350"
-                    title="bolt"
-                    src={videoUrl}
-                  />
-                </Col>
-              </Row>
+
+            <Col xs="12" md="6">
+              <h2 className="why-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
+              <h3 dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="why-wrapper__body">
+              </h3>
+            </Col>
+            <Col xs="12" md="6" className="text-center">
+              <iframe
+                width={detectScreenWidthChange()}
+                height="350"
+                title="bolt"
+                src={videoUrl}
+              />
             </Col>
           </Row>
+
         </Container>
       )
     }}
