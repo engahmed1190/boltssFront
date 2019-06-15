@@ -1,0 +1,26 @@
+/* PROJECT */
+
+	Site Name:   Bolt
+	Site URL:    https://boltss.netlify.com
+	Created:     2019/07/1
+	Standards:   HTML5, CSS3, Javascript
+	Software:    GatsbyJS
+	Web Design:  Mohamed Magdy
+
+/* AUTHOR */
+
+	Name:        Mohamed Magdy
+	Nickname:    MM
+	Title:       Front-end developer
+	Location:    Cairo, Egypt	
+	Contact:     mohamed.magdy.abdelhamid@gmail.com
+
+/* SOCIAL */
+
+	Linkedin:    https://www.linkedin.com/in/mmagdy87/
+	Facebook:    https://www.facebook.com/m.magdy87
+	Twitter:     https://twitter.com/MMagdy87
+
+/* META */
+
+	Built with: HTML, CSS, GatsbyJS, GraphQL

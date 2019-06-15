@@ -1,7 +1,7 @@
 @import "../../assets/styles/color-palette.scss";
 @import "../../assets/styles/mixins.scss";
 
-.services-parent {
+.careers-parent {
   // background-image: linear-gradient($blue, $blue),
   //   url("../../assets/images/services.png");
   // background-repeat: no-repeat;
@@ -9,7 +9,7 @@
   // background-size: cover;
 }
 
-.services-wrapper {
+.careers-wrapper {
   padding-top: 81px !important;
   text-align: left;
   @include is-mobile {
@@ -24,20 +24,23 @@
     // color: white;
   }
   &__body {
-    font-size: 20px;
-    // color: white;
+    height: 30%;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 50px;
     @include is-mobile {
       font-size: 16px;
     }
   }
   &__image {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin: 30px auto;
-    background-color: #eee;
+    width: 80%;
+    @include is-mobile {
+      width: 100%;
+    }
   }
-  &__text {
-    // color: white;
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

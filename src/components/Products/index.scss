@@ -1,7 +1,7 @@
 @import "../../assets/styles/color-palette.scss";
 @import "../../assets/styles/mixins.scss";
 
-.projects-parent {
+.products-parent {
   background-image: linear-gradient($blue, $blue),
     url("../../assets/images/services.png");
   background-repeat: no-repeat;
@@ -9,7 +9,7 @@
   background-size: cover;
 }
 
-.projects-wrapper {
+.products-wrapper {
   padding-top: 81px !important;
   text-align: left;
   @include is-mobile {
@@ -30,18 +30,14 @@
       font-size: 16px;
     }
   }
-
-  &__card-img {
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-    vertical-align: middle;
-    border-style: none;
-    height: 150px;
+  &__image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 30px auto;
+    background-color: white;
   }
-  &__card-text-heading {
-    font-weight: bold;
+  &__text {
+    color: white;
   }
 }

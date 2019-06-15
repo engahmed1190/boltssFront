@@ -1,15 +1,15 @@
 @import "../../assets/styles/color-palette.scss";
 @import "../../assets/styles/mixins.scss";
 
-.services-parent {
+.partners-parent {
   // background-image: linear-gradient($blue, $blue),
-  //   url("../../assets/images/services.png");
+  //   url("../../assets/images/partners.png");
   // background-repeat: no-repeat;
   // background-position: top center;
   // background-size: cover;
 }
 
-.services-wrapper {
+.partners-wrapper {
   padding-top: 81px !important;
   text-align: left;
   @include is-mobile {
@@ -26,18 +26,30 @@
   &__body {
     font-size: 20px;
     // color: white;
-    @include is-mobile {
-      font-size: 16px;
-    }
   }
   &__image {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin: 30px auto;
     background-color: #eee;
   }
-  &__text {
-    // color: white;
+  &__image-wrapper {
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
+}
+
+.partners-slide-image {
+  width: 200px !important;
+  @media screen and (max-width: 900px) {
+    max-height: 150px !important;
+    width: 80%;
+    max-width: 80%;
+  }
+}
+
+#partners-slides .slick-slider .slick-list .slick-track .slick-slide {
+  height: 200px !important;
 }
