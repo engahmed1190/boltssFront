@@ -5,9 +5,11 @@ import { Container, Row, Col } from "reactstrap";
 import "./index.scss";
 
 function detectScreenWidthChange() {
-  const screenWidth = window.matchMedia("(min-width: 767px)");
-  if (screenWidth.matches) return 550;
-  else return 320;
+  if (typeof window !== 'undefined') {
+    const screenWidth = window.matchMedia("(min-width: 767px)");
+    if (screenWidth.matches) return 550;
+    else return 320;
+  }
 }
 
 const Why = ({ lang = "en" }) => (
