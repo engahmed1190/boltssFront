@@ -1,20 +1,10 @@
 @import "../../assets/styles/color-palette.scss";
 @import "../../assets/styles/mixins.scss";
 
-.partners-parent {
-  // background-image: linear-gradient($blue, $blue),
-  //   url("../../assets/images/partners.png");
-  // background-repeat: no-repeat;
-  // background-position: top center;
-  // background-size: cover;
-}
-
 .partners-wrapper {
   padding-top: 81px !important;
   text-align: left;
-  @include is-mobile {
-    padding-top: 56px !important;
-  }
+
   &__ar {
     direction: rtl;
     text-align: right;
@@ -47,6 +37,11 @@
     max-height: 150px !important;
     width: 80%;
     max-width: 80%;
+  }
+  picture img {
+    @include is-mobile {
+      object-fit: contain !important;
+    }
   }
 }
 

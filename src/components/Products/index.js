@@ -36,41 +36,38 @@ const Products = ({ lang = "en" }) => (
         arabicContent } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
-        <div className="products-parent" id="products">
-          <Container className={`products-wrapper ${lang === "en" ? "" : "products-wrapper__ar"}`}>
+        <Container className={`products-wrapper ${lang === "en" ? "" : "products-wrapper__ar"}`} id="products">
+          <Row>
+            <Col xs="12">
+              <h2 className="products-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
+              <p dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="products-wrapper__body">
+              </p>
+            </Col>
+            <Col xs="12">
+              <Row className="justify-content-center">
+                <Col
+                  xs="12"
+                  md="3"
+                  className="text-center products-wrapper__text"
+                >
+                  <div className="products-wrapper__image" />
+                  {lang === "en" ? firstProduct : arabicFirstProduct}
+                </Col>
+                <Col
+                  xs="12"
+                  md="3"
+                  className="text-center products-wrapper__text"
+                >
+                  <div className="products-wrapper__image" />
+                  {lang === "en" ? secondProduct : arabicSecondProduct}
+                </Col>
 
+              </Row>
+            </Col>
 
-            <Row>
-              <Col xs="12" md="6">
-                <h2 className="products-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
-                <h3 dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="products-wrapper__body">
-                </h3>
-              </Col>
-              <Col xs="12" md="6">
-                <Row>
-                  <Col
-                    xs="12"
-                    md="6"
-                    className="text-center products-wrapper__text"
-                  >
-                    <div className="products-wrapper__image" />
-                    {lang === "en" ? firstProduct : arabicFirstProduct}
-                  </Col>
-                  <Col
-                    xs="12"
-                    md="6"
-                    className="text-center products-wrapper__text"
-                  >
-                    <div className="products-wrapper__image" />
-                    {lang === "en" ? secondProduct : arabicSecondProduct}
-                  </Col>
-                </Row>
-              </Col>
+          </Row>
 
-            </Row>
-
-          </Container>
-        </div>
+        </Container>
       )
     }}
   />

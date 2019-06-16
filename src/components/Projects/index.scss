@@ -1,14 +1,6 @@
 @import "../../assets/styles/color-palette.scss";
 @import "../../assets/styles/mixins.scss";
 
-.projects-parent {
-  background-image: linear-gradient($blue, $blue),
-    url("../../assets/images/services.png");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-}
-
 .projects-wrapper {
   padding-top: 81px !important;
   text-align: left;
@@ -21,11 +13,11 @@
   }
   &__heading {
     font-weight: bold;
-    color: white;
+    color: black;
   }
   &__body {
     font-size: 20px;
-    color: white;
+    color: black;
     @include is-mobile {
       font-size: 16px;
     }

@@ -1,14 +1,6 @@
 @import "../../assets/styles/color-palette.scss";
 @import "../../assets/styles/mixins.scss";
 
-.services-parent {
-  // background-image: linear-gradient($blue, $blue),
-  //   url("../../assets/images/services.png");
-  // background-repeat: no-repeat;
-  // background-position: top center;
-  // background-size: cover;
-}
-
 .services-wrapper {
   padding-top: 81px !important;
   text-align: left;
@@ -21,23 +13,23 @@
   }
   &__heading {
     font-weight: bold;
-    // color: white;
+    color: black;
   }
   &__body {
     font-size: 20px;
-    // color: white;
+    color: black;
     @include is-mobile {
       font-size: 16px;
     }
   }
   &__image {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin: 30px auto;
     background-color: #eee;
   }
   &__text {
-    // color: white;
+    color: black;
   }
 }

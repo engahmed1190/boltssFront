@@ -1,16 +1,7 @@
 @import "../../assets/styles/color-palette.scss";
 @import "../../assets/styles/mixins.scss";
 
-.products-parent {
-  background-image: linear-gradient($blue, $blue),
-    url("../../assets/images/services.png");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-}
-
 .products-wrapper {
-  padding-top: 81px !important;
   text-align: left;
   @include is-mobile {
     padding-top: 56px !important;
@@ -21,11 +12,11 @@
   }
   &__heading {
     font-weight: bold;
-    color: white;
+    color: black;
   }
   &__body {
     font-size: 20px;
-    color: white;
+    color: black;
     @include is-mobile {
       font-size: 16px;
     }
@@ -35,9 +26,9 @@
     width: 200px;
     height: 200px;
     margin: 30px auto;
-    background-color: white;
+    background-color: #eee;
   }
   &__text {
-    color: white;
+    color: black;
   }
 }

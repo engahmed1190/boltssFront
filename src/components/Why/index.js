@@ -4,14 +4,6 @@ import { Container, Row, Col } from "reactstrap";
 
 import "./index.scss";
 
-function detectScreenWidthChange() {
-  if (typeof window !== 'undefined') {
-    const screenWidth = window.matchMedia("(min-width: 767px)");
-    if (screenWidth.matches) return 550;
-    else return 320;
-  }
-}
-
 const Why = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
@@ -40,14 +32,12 @@ const Why = ({ lang = "en" }) => (
           <Row>
 
             <Col xs="12" md="6">
-              <h2 className="why-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
-              <h3 dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="why-wrapper__body">
-              </h3>
+              <h1 className="why-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h1>
+              <p dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="why-wrapper__body">
+              </p>
             </Col>
-            <Col xs="12" md="6" className="text-center">
+            <Col xs="12" md="6" className="text-center why-wrapper__iframe-container">
               <iframe
-                width={detectScreenWidthChange()}
-                height="350"
                 title="bolt"
                 src={videoUrl}
               />

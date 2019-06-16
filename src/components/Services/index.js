@@ -37,46 +37,44 @@ const Services = ({ lang = "en" }) => (
         arabicContent } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
-        <div className="services-parent" id="services">
-          <Container className={`services-wrapper ${lang === "en" ? "" : "services-wrapper__ar"}`} >
+        <Container className={`services-wrapper ${lang === "en" ? "" : "services-wrapper__ar"}`} id="services">
 
-            <Row>
-              <Col xs="12" md="6">
-                <h2 className="services-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
-                <h3 dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="services-wrapper__body">
-                </h3>
-              </Col>
-              <Col xs="12" md="6">
-                <Row>
-                  <Col
-                    xs="12"
-                    md="4"
-                    className="text-center services-wrapper__text"
-                  >
-                    <div className="services-wrapper__image" />
-                    {lang === "en" ? firstService : arabicFirstService}
-                  </Col>
-                  <Col
-                    xs="12"
-                    md="4"
-                    className="text-center services-wrapper__text"
-                  >
-                    <div className="services-wrapper__image" />
-                    {lang === "en" ? secondService : arabicSecondService}
-                  </Col>
-                  <Col
-                    xs="12"
-                    md="4"
-                    className="text-center services-wrapper__text"
-                  >
-                    <div className="services-wrapper__image" />
-                    {lang === "en" ? thirdService : arabicThirdService}
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+          <Row>
+            <Col xs="12">
+              <h2 className="services-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
+              <p dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="services-wrapper__body">
+              </p>
+            </Col>
+            <Col xs="12">
+              <Row className="justify-content-center">
+                <Col
+                  xs="12"
+                  md="3"
+                  className="text-center services-wrapper__text"
+                >
+                  <div className="services-wrapper__image" />
+                  {lang === "en" ? firstService : arabicFirstService}
+                </Col>
+                <Col
+                  xs="12"
+                  md="3"
+                  className="text-center services-wrapper__text"
+                >
+                  <div className="services-wrapper__image" />
+                  {lang === "en" ? secondService : arabicSecondService}
+                </Col>
+                <Col
+                  xs="12"
+                  md="3"
+                  className="text-center services-wrapper__text"
+                >
+                  <div className="services-wrapper__image" />
+                  {lang === "en" ? thirdService : arabicThirdService}
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
       )
     }}
   />

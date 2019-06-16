@@ -1,20 +1,10 @@
 @import "../../assets/styles/color-palette.scss";
 @import "../../assets/styles/mixins.scss";
 
-.careers-parent {
-  // background-image: linear-gradient($blue, $blue),
-  //   url("../../assets/images/services.png");
-  // background-repeat: no-repeat;
-  // background-position: top center;
-  // background-size: cover;
-}
-
 .careers-wrapper {
   padding-top: 81px !important;
   text-align: left;
-  @include is-mobile {
-    padding-top: 56px !important;
-  }
+
   &__ar {
     direction: rtl;
     text-align: right;

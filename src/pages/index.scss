@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans&display=swap");
 @import "../assets/styles/mixins.scss";
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "PT Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
@@ -13,14 +14,7 @@ html {
   scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .row {
   width: 100% !important;
-   @include is-mobile {
-      margin: 0 !important
-    }
+  margin: 0 !important;
 }

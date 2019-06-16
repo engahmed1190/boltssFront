@@ -3,9 +3,7 @@
 .why-wrapper {
   padding-top: 81px !important;
   text-align: left;
-  @include is-mobile {
-    padding-top: 56px !important;
-  }
+
   &__ar {
     direction: rtl;
     text-align: right;
@@ -18,5 +16,25 @@
     @include is-mobile {
       font-size: 16px;
     }
+  }
+  &__iframe-container {
+    overflow: hidden;
+    padding-bottom: 40%;
+    position: relative;
+    @include is-mobile {
+      padding-bottom: 115%;
+    }
+    iframe {
+      border: 0;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 350px;
+    }
+  }
+  /* 4x3 Aspect Ratio */
+  .iframe-container-4x3 {
+    padding-top: 75%;
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "reactstrap";
+// import { Button } from "reactstrap";
 import Slider from "react-slick";
 import slide1 from "../../assets/images/slide1.png";
 import slide2 from "../../assets/images/slide2.png";
@@ -8,6 +8,26 @@ import linkedinIcon from "../../assets/images/linkedin-letters.svg";
 import twitterIcon from "../../assets/images/twitter.svg";
 import youtubeIcon from "../../assets/images/youtube.svg";
 import "./index.scss";
+
+function redirectToSocialMedia(website) {
+  switch (website) {
+    case "facebook":
+      window.open("https://www.facebook.com/BOLTSS.EG", "__target");
+      break;
+    case "twitter":
+      window.open("https://twitter.com/bolt_smart", "__target");
+      break;
+    case "linkedin":
+      window.open("https://www.linkedin.com/in/bolt-smart-solutions-6957b6181", "__target");
+      break;
+    case "youtube":
+      window.open("https://www.youtube.com/channel/UCnnKfVOg2vAkaME529PTQxw?view_as=subscriber", "__target");
+      break;
+
+    default:
+      break;
+  }
+}
 
 const Carousel = ({ lang = "en" }) => {
   const settings = {
@@ -34,40 +54,40 @@ const Carousel = ({ lang = "en" }) => {
             We're Leading in
             <br /> smart Technology
           </h1>
-          <Button color="primary" size="lg">
+          {/* <Button color="primary" size="lg">
             {lang === "en" ? "About Us" : "من نحن"}
           </Button>
           <Button color="warning" size="lg" className="hero-data__cta">
             {lang === "en" ? "CTA" : "CTA"}
-          </Button>
+          </Button> */}
         </div>
       </div>
       <div className="social-media-wrapper">
-        <div className="icon-button" role="button">
+        <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("facebook")}>
           <img
             src={facebookIcon}
             alt="facebook icon"
             className="icon-button__icon"
           />
         </div>
-        <div className="icon-button" role="button">
+        <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("twitter")}>
           <img
             src={twitterIcon}
-            alt="facebook icon"
+            alt="twitter icon"
             className="icon-button__icon"
           />
         </div>
-        <div className="icon-button" role="button">
+        <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("linkedin")}>
           <img
             src={linkedinIcon}
             alt="linkedin icon"
             className="icon-button__icon"
           />
         </div>
-        <div className="icon-button" role="button">
+        <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("youtube")}>
           <img
             src={youtubeIcon}
-            alt="linkedin icon"
+            alt="youtube icon"
             className="icon-button__icon"
           />
         </div>

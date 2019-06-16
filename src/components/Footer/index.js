@@ -19,6 +19,26 @@ import youtubeIcon from "../../assets/images/youtube.svg";
 
 import "./index.scss";
 
+function redirectToSocialMedia(website) {
+  switch (website) {
+    case "facebook":
+      window.open("https://www.facebook.com/BOLTSS.EG", "__target");
+      break;
+    case "twitter":
+      window.open("https://twitter.com/bolt_smart", "__target");
+      break;
+    case "linkedin":
+      window.open("https://www.linkedin.com/in/bolt-smart-solutions-6957b6181", "__target");
+      break;
+    case "youtube":
+      window.open("https://www.youtube.com/channel/UCnnKfVOg2vAkaME529PTQxw?view_as=subscriber", "__target");
+      break;
+
+    default:
+      break;
+  }
+}
+
 const Footer = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
@@ -51,16 +71,16 @@ const Footer = ({ lang = "en" }) => (
                     <img src={logo} alt="logo" style={{ marginTop: "8px" }} />
                     <div className="footer-wrapper__data">
                       <div className="footer-wrapper__data__contact">
-                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "HOME" : "الرئيسية"}</p>
-                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "ABOUT US" : "عننا"}</p>
-                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "PRODUCTS" : "منتجاتنا"}</p>
-                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "SERVICES" : "خدماتنا"}</p>
+                        <p className="footer-wrapper__data__contact__item"><a href="#home">{lang === "en" ? "HOME" : "الرئيسية"}</a></p>
+                        <p className="footer-wrapper__data__contact__item"><a href="#why">{lang === "en" ? "ABOUT US" : "عننا"}</a></p>
+
+                        <p className="footer-wrapper__data__contact__item"><a href="#work">{lang === "en" ? "OUR WORK" : "اعمالنا"}</a></p>
+
                       </div>
                       <div className="footer-wrapper__data__contact">
-                        <p className="footer-wrapper__data__contact__item"> {lang === "en" ? "PROJECTS" : "مشروعتنا"}</p>
-                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "PARTNERS" : "شركائنا"}</p>
-                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "CAREERS" : "الوظائف"}</p>
-                        <p className="footer-wrapper__data__contact__item">{lang === "en" ? "CONTACT US" : "اتصل بنا"}</p>
+                        <p className="footer-wrapper__data__contact__item"><a href="#partners">{lang === "en" ? "PARTNERS" : "شركائنا"}</a></p>
+                        <p className="footer-wrapper__data__contact__item"><a href="#careers">{lang === "en" ? "CAREERS" : "الوظائف"}</a></p>
+                        <p className="footer-wrapper__data__contact__item"><a href="#contact">{lang === "en" ? "CONTACT US" : "اتصل بنا"}</a></p>
                       </div>
 
                     </div>
@@ -135,28 +155,28 @@ const Footer = ({ lang = "en" }) => (
                   <Col xs="12" md="6">
 
                     <div className="footer-wrapper__data__social-media">
-                      <div className="footer-icon-button" role="button">
+                      <div className="footer-icon-button" role="button" onClick={() => redirectToSocialMedia("facebook")}>
                         <img
                           src={facebookIcon}
                           alt="facebook icon"
                           className="icon-button__icon"
                         />
                       </div>
-                      <div className="footer-icon-button" role="button">
+                      <div className="footer-icon-button" role="button" onClick={() => redirectToSocialMedia("twitter")}>
                         <img
                           src={twitterIcon}
                           alt="facebook icon"
                           className="icon-button__icon"
                         />
                       </div>
-                      <div className="footer-icon-button" role="button">
+                      <div className="footer-icon-button" role="button" onClick={() => redirectToSocialMedia("linkedin")}>
                         <img
                           src={linkedinIcon}
                           alt="linkedin icon"
                           className="icon-button__icon"
                         />
                       </div>
-                      <div className="footer-icon-button" role="button">
+                      <div className="footer-icon-button" role="button" onClick={() => redirectToSocialMedia("youtube")}>
                         <img
                           src={youtubeIcon}
                           alt="linkedin icon"

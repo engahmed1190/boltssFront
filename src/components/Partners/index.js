@@ -46,12 +46,11 @@ const Partners = ({ lang = "en" }) => (
       return (
         <div className="partners-parent" id="partners">
           <Container className={`partners-wrapper ${lang === "en" ? "" : "partners-wrapper__ar"}`} >
-
-            <Col xs="12" md="12">
-              <h2 className="partners-wrapper__heading">{lang === "en" ? "PARTNERS" : "شركائنا"}</h2>
+            <Col xs="12" md="12" className="text-center mb-5">
+              <h1 className="partners-wrapper__heading">{lang === "en" ? "PARTNERS" : "شركائنا"}</h1>
             </Col>
             <Col xs="12" md="12">
-              <Row style={{ justifyContent: "center" }}>
+              <Row className="justify-content-center">
                 {partners.edges.map((partner, index) => (
                   <Col
                     xs="12"
