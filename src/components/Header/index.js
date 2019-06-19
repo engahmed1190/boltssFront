@@ -52,7 +52,7 @@ class Header extends Component {
     this.setState(state => ({ collapse: !state.collapse }));
   };
   render() {
-    const { activeItem, lang } = this.props;
+    const { activeItem, lang = "en" } = this.props;
     return (
       <Navbar light expand="lg" className={`header `}>
         <div className="header__logo">
