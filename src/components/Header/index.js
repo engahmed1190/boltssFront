@@ -54,7 +54,7 @@ class Header extends Component {
   render() {
     const { activeItem, lang } = this.props;
     return (
-      <Navbar light expand="lg" className="header">
+      <Navbar light expand="lg" className={`header `}>
         <div className="header__logo">
           <a href="/">
             <img src={logo} alt="logo" className="header__logo--img" />
@@ -64,7 +64,7 @@ class Header extends Component {
         <Collapse
           isOpen={this.state.isOpen}
           navbar
-          className="header__collapse"
+          className={`header__collapse ${lang === "en" ? "" : "header__ar"}`}
         >
           <Nav className="ml-auto header__nav" navbar>
             <NavItem
@@ -135,7 +135,7 @@ class Header extends Component {
               className="header__nav-item d-none d-md-block"
             >
               <DropdownToggle nav caret className="header__nav-link">
-                {lang === "en" ? "LANG" : "اللغة"}
+                {lang === "en" ? "LANGUAGE" : "اللغة"}
               </DropdownToggle>
               <DropdownMenu right className="header__nav-sub-menu">
                 <Link to="/" onClick={this.toggleMainNav}>
