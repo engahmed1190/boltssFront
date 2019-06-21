@@ -28,7 +28,8 @@ collections:
           default: "services",
         }
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Arabic Title", name: "arabicTitle", widget: "text", required: true }
+      - { label: "Content", name: "content", widget: "string", required: true }
+      - { label: "Arabic Content", name: "arabicContent", widget: "text", required: true }
       - { label: "Image", name: "image", widget: "image", required: true }        
 
   - name: "projects" # Used in routes, e.g., /admin/collections/blog
@@ -73,9 +74,10 @@ collections:
           default: "products",
         }
       - { label: "Title", name: "title", widget: "string", required: true }      
+      - { label: "Content", name: "content", widget: "string", required: true }      
       - {
-          label: "Arabic Title",
-          name: "arabicTitle",
+          label: "Arabic Content",
+          name: "arabicContent",
           widget: "string",
           required: true,
         }

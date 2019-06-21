@@ -58,7 +58,7 @@ const Products = ({ lang = "en" }) => (
                       fluid={product.node.frontmatter.image.childImageSharp.fluid}
                       className="products-wrapper__image"
                     />
-                    {lang === "en" ? product.node.frontmatter.title : product.node.frontmatter.arabicTitle}
+                    {lang === "en" ? product.node.frontmatter.content : product.node.frontmatter.arabicContent}
                   </Col>
                 ))}
               </Row>

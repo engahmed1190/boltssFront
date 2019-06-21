@@ -61,7 +61,7 @@ const Services = ({ lang = "en" }) => (
                       fluid={service.node.frontmatter.image.childImageSharp.fluid}
                       className="services-wrapper__image"
                     />
-                    {lang === "en" ? service.node.frontmatter.title : service.node.frontmatter.arabicTitle}
+                    {lang === "en" ? service.node.frontmatter.content : service.node.frontmatter.arabicContent}
                   </Col>
 
                 ))}
