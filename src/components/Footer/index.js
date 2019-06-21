@@ -4,14 +4,8 @@ import {
   Container,
   Row,
   Col,
-  // Form,
-  // FormGroup,
-  // Input,
-  // Button,
-  // Label
 } from "reactstrap";
 import logo from "../../assets/images/logo.png";
-import map from "../../assets/images/map.png";
 import facebookIcon from "../../assets/images/facebook-logo.svg";
 import linkedinIcon from "../../assets/images/linkedin-letters.svg";
 import twitterIcon from "../../assets/images/twitter.svg";
@@ -87,67 +81,8 @@ const Footer = ({ lang = "en" }) => (
 
                   </Col>
                   <Col xs="12" md="6">
-                    <img
-                      src={map}
-                      alt="map"
-                      style={{ width: "100%", margin: "24px 0" }}
-                    />
-
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.8453052099494!2d31.291789015114485!3d30.012597981893887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAwJzQ1LjQiTiAzMcKwMTcnMzguMyJF!5e0!3m2!1sen!2seg!4v1560992371265!5m2!1sen!2seg" width="400" height="300" frameBorder="0" style={{ width: "100%", margin: "24px 0" }} allowFullScreen></iframe>
                   </Col>
-                  {/* <Col xs="12" md="4" className="p-4 d-flex justify-content-center">
-                    <Form
-                      style={{
-                        backgroundColor: "#216896",
-                        color: "white",
-                        padding: "16px",
-                        borderRadius: "10px"
-                      }}
-                    >
-                      <FormGroup>
-                        <h2>Sign Up</h2>
-                        <p>
-                          Planning to visit Las Vegas or any other vacational resort
-                          where casinos Planning to visit Las Vegas or any other
-                    vacational resort where casinos{" "}
-                        </p>
-                      </FormGroup>
-                      <FormGroup>
-                        <Input
-                          type="email"
-                          name="email"
-                          id="exampleEmail"
-                          placeholder="Email"
-                        />
-                      </FormGroup>
-                      <FormGroup>
-                        <Input
-                          type="password"
-                          name="password"
-                          id="examplePassword"
-                          placeholder="Password"
-                        />
-                      </FormGroup>
-
-                      <FormGroup>
-                        <Input type="select" name="select" id="exampleSelect">
-                          <option>Country</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </Input>
-                      </FormGroup>
-                      <FormGroup check>
-                        <Label check>
-                          <Input type="checkbox" /> By clicking you agree to the
-                  </Label>
-                      </FormGroup>
-                      <Button color="primary" size="lg" block>
-                        Sign Up
-                </Button>
-                    </Form>
-                  </Col> */}
                 </Row>
               </Col>
               <Col xs="12">

@@ -11,28 +11,29 @@ import {
 } from "reactstrap";
 import "./index.scss";
 
-const slide1 = require("../../assets/images/slide1.png");
-const slide2 = require("../../assets/images/slide2.png");
-
 const Projects = ({ lang = "en" }) => (
   <StaticQuery
     query={graphql`
       query ProjectsQuery {
-  allMarkdownRemark(filter: {frontmatter: {section: {eq: "projects"}}}) {
+  allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___date] }filter: {frontmatter: {section: {eq: "projects"}}}) {
     edges {
       node {
         id
         frontmatter {
-          title          
-          firstProjectTitle
-          firstProjectContent
-          secondProjectTitle
-          secondProjectContent
+          title                                                  
           content
-          arabicTitle
-          arabicFirstProjectContent
-          arabicSecondProjectContent 
+          arabicTitle          
           arabicContent
+          image{
+              childImageSharp {
+                fluid(maxWidth: 700) {
+                  srcSet
+                  sizes
+                  aspectRatio
+                  src
+                }
+              }
+            }
         }
       }
     }
@@ -40,59 +41,40 @@ const Projects = ({ lang = "en" }) => (
 }
     `}
     render={data => {
-      const { title, content, firstProjectTitle, firstProjectContent, secondProjectTitle, secondProjectContent, arabicTitle,
-        arabicFirstProjectContent,
-        arabicSecondProjectContent,
-        arabicContent } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const headingData = data.allMarkdownRemark.edges[0].node.frontmatter;
+      const projects = data.allMarkdownRemark.edges.slice(1, data.allMarkdownRemark.edges.length)
 
       return (
         <Container className={`projects-wrapper ${lang === "en" ? "" : "projects-wrapper__ar"}`} id="projects">
           <Row>
             <Col xs="12">
-              <h2 className="projects-wrapper__heading">{lang === "en" ? title.toUpperCase() : arabicTitle}</h2>
-              <p dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="projects-wrapper__body">
+              <h2 className="projects-wrapper__heading">{lang === "en" ? headingData.title.toUpperCase() : headingData.arabicTitle}</h2>
+              <p dangerouslySetInnerHTML={{ __html: lang === "en" ? headingData.content : headingData.arabicContent }} className="projects-wrapper__body">
               </p>
             </Col>
             <Col xs="12">
               <Row className="justify-content-center">
-                <Col xs="12" md="3">
-                  <Card className="mb-2">
-                    <div
-                      className="projects-wrapper__card-img"
-                      style={{
-                        backgroundImage: `url(${slide1})`
-                      }}
-                    />
-                    <CardBody>
-                      <CardTitle className="projects-wrapper__card-text-heading">
-                        {firstProjectTitle}
-                      </CardTitle>
-                      <CardText>
-                        {lang === "en" ? firstProjectContent : arabicFirstProjectContent}
-                      </CardText>
-                      {/* <CardLink href="#">READ MORE</CardLink> */}
-                    </CardBody>
-                  </Card>
-                </Col>
-                <Col xs="12" md="3">
-                  <Card>
-                    <div
-                      className="projects-wrapper__card-img"
-                      style={{
-                        backgroundImage: `url(${slide2})`
-                      }}
-                    />
-                    <CardBody>
-                      <CardTitle className="projects-wrapper__card-text-heading">
-                        {secondProjectTitle}
-                      </CardTitle>
-                      <CardText>
-                        {lang === "en" ? secondProjectContent : arabicSecondProjectContent}
-                      </CardText>
-                      {/* <CardLink href="#">READ MORE</CardLink> */}
-                    </CardBody>
-                  </Card>
-                </Col>
+                {projects.map((project, index) => (
+                  <Col xs="12" md="3" key={index}>
+                    <Card className="mb-2">
+                      <div
+                        className="projects-wrapper__card-img"
+                        style={{
+                          backgroundImage: `url(${project.node.frontmatter.image.childImageSharp.fluid.src})`
+                        }}
+                      />
+                      <CardBody>
+                        <CardTitle className="projects-wrapper__card-text-heading">
+                          {project.node.frontmatter.title}
+                        </CardTitle>
+                        <CardText>
+                          {lang === "en" ? project.node.frontmatter.content : project.node.frontmatter.arabicContent}
+                        </CardText>
+                        {/* <CardLink href="#">READ MORE</CardLink> */}
+                      </CardBody>
+                    </Card>
+                  </Col>
+                ))}
               </Row>
             </Col>
           </Row>

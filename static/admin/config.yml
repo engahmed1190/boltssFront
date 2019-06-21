@@ -9,38 +9,18 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "why" # Used in routes, e.g., /admin/collections/blog
-    label: "Why" # Used in the UI
-    folder: "src/pages/md/home/why" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
-    fields: # The fields for each document, usually in front matter
-      - { label: "Section", name: "section", widget: "hidden", default: "why" }
-      - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Content", name: "content", widget: "text", required: true }
-      - {
-          label: "Arabic Title",
-          name: "arabicTitle",
-          widget: "string",
-          required: true,
-        }
-      - {
-          label: "Arabic Content",
-          name: "arabicContent",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Video URL",
-          name: "videoUrl",
-          widget: "string",
-          required: true,
-        }
-
   - name: "services" # Used in routes, e.g., /admin/collections/blog
     label: "Services" # Used in the UI
-    folder: "src/pages/md/home/services" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
+    folder: "src/pages/md/home/services/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{title}}_{{year}}-{{month}}-{{day}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+      - {
+            label: "Date",
+            name: "date",
+            widget: "hidden",
+            default: '{{year}}-{{month}}-{{day}}'
+        }
       - {
           label: "Section",
           name: "section",
@@ -48,152 +28,117 @@ collections:
           default: "services",
         }
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Content", name: "content", widget: "text", required: true }
-      - {
-          label: "First Service",
-          name: "firstService",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Second Service",
-          name: "secondService",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Third Service",
-          name: "thirdService",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Arabic Title",
-          name: "arabicTitle",
-          widget: "string",
-          required: true,
-        }
-      - {
-          label: "Arabic Content",
-          name: "arabicContent",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Arabic First Service",
-          name: "arabicFirstService",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Arabic Second Service",
-          name: "arabicSecondService",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Arabic Third Service",
-          name: "arabicThirdService",
-          widget: "text",
-          required: true,
-        }
+      - { label: "Arabic Title", name: "arabicTitle", widget: "text", required: true }
+      - { label: "Image", name: "image", widget: "image", required: true }        
 
   - name: "projects" # Used in routes, e.g., /admin/collections/blog
     label: "Projects" # Used in the UI
-    folder: "src/pages/md/home/projects" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
+    folder: "src/pages/md/home/projects/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{title}}_{{year}}-{{month}}-{{day}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+      - {
+            label: "Date",
+            name: "date",
+            widget: "hidden",
+            default: '{{year}}-{{month}}-{{day}}'
+        }
       - {
           label: "Section",
           name: "section",
           widget: "hidden",
           default: "projects",
         }
-      - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Arabic Title", name: "arabicTitle", widget: "string", required: true }
-      - { label: "Content", name: "content", widget: "text", required: true }
-      - { label: "Arabic Content", name: "arabicContent", widget: "text", required: true }
-      - {
-          label: "First Project Title",
-          name: "firstProjectTitle",
-          widget: "string",
-          required: true,
-        }
-      - {
-          label: "First Project Content",
-          name: "firstProjectContent",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Arabic First Project Content",
-          name: "arabicFirstProjectContent",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Second Project Title",
-          name: "secondProjectTitle",
-          widget: "string",
-          required: true,
-        }
-      - {
-          label: "Second Project Content",
-          name: "secondProjectContent",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Arabic Second Project Content",
-          name: "arabicSecondProjectContent",
-          widget: "text",
-          required: true,
-        }
-
+      - { label: "Title", name: "title", widget: "string", required: true }            
+      - { label: "Content", name: "content", widget: "string", required: true }            
+      - { label: "Arabic Content", name: "arabicContent", widget: "string", required: true }            
+      - { label: "Image", name: "image", widget: "image", required: true }        
+      
   - name: "products" # Used in routes, e.g., /admin/collections/blog
-    label: "products" # Used in the UI
-    folder: "src/pages/md/home/products" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
+    label: "Products" # Used in the UI
+    folder: "src/pages/md/home/products/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{title}}_{{year}}-{{month}}-{{day}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+      - {
+            label: "Date",
+            name: "date",
+            widget: "hidden",
+            default: '{{year}}-{{month}}-{{day}}'
+          }
       - {
           label: "Section",
           name: "section",
           widget: "hidden",
           default: "products",
         }
+      - { label: "Title", name: "title", widget: "string", required: true }      
+      - {
+          label: "Arabic Title",
+          name: "arabicTitle",
+          widget: "string",
+          required: true,
+        }
+      - { label: "Image", name: "image", widget: "image", required: true }  
+      
+
+  - name: "partners" # Used in routes, e.g., /admin/collections/blog
+    label: "Partners" # Used in the UI
+    folder: "src/pages/md/home/partners" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{title}}_{{year}}-{{month}}-{{day}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Section",
+          name: "section",
+          widget: "hidden",
+          default: "partners",
+        }
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Content", name: "content", widget: "text", required: true }
-      - { label: "Arabic Title", name: "arabicTitle", widget: "string", required: true }
-      - { label: "Arabic Content", name: "arabicContent", widget: "text", required: true }
-      - {
-          label: "First Product",
-          name: "firstProduct",
-          widget: "string",
-          required: true,
-        }
-      - {
-          label: "Arabic First Product",
-          name: "arabicFirstProduct",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Second Product",
-          name: "secondProductTitle",
-          widget: "string",
-          required: true,
-        }
-      - {
-          label: "Arabic Second Product",
-          name: "arabicSecondProduct",
-          widget: "text",
-          required: true,
-        }
+      - { label: "Logo", name: "logo", widget: "image", required: true }
+
+  - name: "why"
+    label: "Why"
+    files:
+      - label: "Why"
+        name: "about"
+        file: "src/pages/md/home/why.md"
+        fields: # The fields for each document, usually in front matter
+          - {
+              label: "Section",
+              name: "section",
+              widget: "hidden",
+              default: "why",
+            }
+          - { label: "Title", name: "title", widget: "string", required: true }
+          - {
+              label: "Content",
+              name: "content",
+              widget: "text",
+              required: true,
+            }
+          - {
+              label: "Arabic Title",
+              name: "arabicTitle",
+              widget: "string",
+              required: true,
+            }
+          - {
+              label: "Arabic Content",
+              name: "arabicContent",
+              widget: "text",
+              required: true,
+            }
+          - {
+              label: "Video URL",
+              name: "videoUrl",
+              widget: "string",
+              required: true,
+            }
 
   - name: "contact" # Used in routes, e.g., /admin/collections/blog
     label: "Contact" # Used in the UI
-    folder: "src/pages/md/home/contact" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
+    file: "src/pages/md/home/contact.md"
     fields: # The fields for each document, usually in front matter
       - {
           label: "Section",
@@ -204,18 +149,110 @@ collections:
       - { label: "Email", name: "email", widget: "string", required: true }
       - { label: "Phone", name: "phone", widget: "string", required: true }
       - { label: "Address", name: "address", widget: "string", required: true }
-
-  - name: "partners" # Used in routes, e.g., /admin/collections/blog
-    label: "Partners" # Used in the UI
-    folder: "src/pages/md/home/partners" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
+            
+  - name: "careers" # Used in routes, e.g., /admin/collections/blog
+    label: "Careers" # Used in the UI
+    file: "src/pages/md/home/careers.md"
     fields: # The fields for each document, usually in front matter
       - {
           label: "Section",
           name: "section",
           widget: "hidden",
-          default: "partners",
+          default: "careers",
+        }
+      - { label: "Content", name: "content", widget: "string", required: true }
+      - { label: "Arabic Content", name: "arabicContent", widget: "string", required: true }
+      - { label: "Email", name: "email", widget: "string", required: true }        
+
+  - name: "products-heading" # Used in routes, e.g., /admin/collections/blog
+    label: "Products Heading" # Used in the UI
+    file: "src/pages/md/home/products.md"
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Date",
+          name: "date",
+          widget: "hidden",
+          default: '0'
+        }
+      - {
+          label: "Section",
+          name: "section",
+          widget: "hidden",
+          default: "products",
         }
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Logo", name: "logo", widget: "image", required: true }
+      - {
+          label: "Arabic Title",
+          name: "arabicTitle",
+          widget: "string",
+          required: true,
+        }
+      - { label: "Content", name: "content", widget: "text", required: true }
+      - {
+          label: "Arabic Content",
+          name: "arabicContent",
+          widget: "text",
+          required: true,
+        } 
+
+  - name: "projects-heading" # Used in routes, e.g., /admin/collections/blog
+    label: "Projects Heading" # Used in the UI
+    file: "src/pages/md/home/projects.md"
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Date",
+          name: "date",
+          widget: "hidden",
+          default: '0'
+        }
+      - {
+          label: "Section",
+          name: "section",
+          widget: "hidden",
+          default: "projects",
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Arabic Title",
+          name: "arabicTitle",
+          widget: "string",
+          required: true,
+        }
+      - { label: "Content", name: "content", widget: "text", required: true }
+      - {
+          label: "Arabic Content",
+          name: "arabicContent",
+          widget: "text",
+          required: true,
+        } 
+
+  - name: "services-heading" # Used in routes, e.g., /admin/collections/blog
+    label: "Services Heading" # Used in the UI
+    file: "src/pages/md/home/services.md"
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Date",
+          name: "date",
+          widget: "hidden",
+          default: '0'
+        }
+      - {
+          label: "Section",
+          name: "section",
+          widget: "hidden",
+          default: "services",
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Arabic Title",
+          name: "arabicTitle",
+          widget: "string",
+          required: true,
+        }
+      - { label: "Content", name: "content", widget: "text", required: true }
+      - {
+          label: "Arabic Content",
+          name: "arabicContent",
+          widget: "text",
+          required: true,
+        } 

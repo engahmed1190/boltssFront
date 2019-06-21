@@ -13,6 +13,8 @@ const Careers = ({ lang = "en" }) => (
       node {
         id
         frontmatter {          
+          content
+          arabicContent
           email
         }
       }
@@ -21,7 +23,9 @@ const Careers = ({ lang = "en" }) => (
 }
     `}
     render={data => {
-      const { email } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const {  content,
+arabicContent,
+email } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
 
@@ -34,8 +38,8 @@ const Careers = ({ lang = "en" }) => (
           <Row>
             <Col xs="12" md="6">
               <div className="careers-wrapper__body">
-                {lang === "en" ? <span>If you want to build a successful career and be part of our talented team, Please send your resume to <strong>{email}</strong></span> : <span>
-                  اذا اردت ان تبنى مستقبل الوظيفى و تكون من اعضاء فريقنا الموهوبين، من فضلك ارسل سيرتك الذاتية على البريد الالكترونى <strong>{email}</strong>
+                {lang === "en" ? <span>{content} <strong>{email}</strong></span> : <span>
+                  {arabicContent} <strong>{email}</strong>
                 </span>}
               </div>
             </Col>
