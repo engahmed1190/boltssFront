@@ -11,7 +11,7 @@ content: >-
   electronic typesetting, remaining essentially unchanged. It was popularised in
   the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
   and more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.HELLO
+  including versions of Lorem Ipsum.
 arabicContent: >-
   لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه
   وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل
