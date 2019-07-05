@@ -36,12 +36,12 @@ const Why = ({ lang = "en" }) => (
               <p dangerouslySetInnerHTML={{ __html: lang === "en" ? content : arabicContent }} className="why-wrapper__body">
               </p>
             </Col>
-            <Col xs="12" md="6" className="text-center why-wrapper__iframe-container">
+            {/* <Col xs="12" md="6" className="text-center why-wrapper__iframe-container">
               <iframe
                 title="bolt"
                 src={videoUrl}
               />
-            </Col>
+            </Col> */}
           </Row>
 
         </Container>
