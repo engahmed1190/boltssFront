@@ -9,6 +9,6 @@ content: >-
 arabicContent: >-
   اذا اردت ان تبنى مستقبلك الوظيفى و تكون من اعضاء فريقنا الموهوبين، من فضلك
   ارسل سيرتك الذاتية على البريد الالكترونى
-email: ahmed.nagar@boltss.com
+email: career@boltss.com
 ---
 
