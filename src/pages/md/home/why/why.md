@@ -1,29 +1,16 @@
 ---
 section: why
-title: Why Bolt ?
-content: >-
-  Excellence in Everything: A commitment to strive relentlessly, be innovative
-  and to constantly improve ourselves, our teams, our services and products so
-  as to become the best.
-
-
-  Leadership by Example: A commitment to set standards in our business and
-  transactions and be an example for the industry and our own teams. 
-
-  Integrity and Transparency: A commitment to be ethical, sincere and open in
-  our dealings. 
-
-
-  Focus on the Client: We inspire trust from our clients by being fair and
-  acting ethically.
-
-  All business decisions are designed and implemented with you in mind, the
-  client.
-
-  Also to attract and develop the best talent for our business, share knowledge
-  and provide them with the necessary tools and resources to keep up with
-  today’s fast changing environment.
-arabicTitle: ؟ Bolt لماذا
+title: Why Bolt
+content: |-
+  At Bolt we took it upon ourselves to provide the utmost competence
+  and integrity there is. We understand the increasing complexity of
+  technology, and we aim to decipher the latest technological trends to
+  cater your business needs. Equipped with the inclusive know-how, our
+  vision is to deliver top-tier IT solutions for our esteemed clientele. Our
+  goal is to ensure we provide you with the means to run a smooth
+  business operation towards everlasting success.
+  Anybody can do it, but only a few can do it right.
+arabicTitle: لماذا Bolt?
 arabicContent: >-
   التميز في كل شيء: الالتزام بالسعي بلا هوادة ، والابتكار وتحسين أنفسنا وفرقنا
   وخدماتنا ومنتجاتنا باستمرار حتى تصبح الأفضل.
