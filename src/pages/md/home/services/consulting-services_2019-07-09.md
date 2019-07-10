@@ -8,6 +8,6 @@ content: >-
   savvy team of consultants to carefully enhance your business model, and guide
   you with the best tools, to superiority!
 arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
-image: /uploads/img1.png
+image: /uploads/wifi-consulting-1024x478.jpg
 ---
 
