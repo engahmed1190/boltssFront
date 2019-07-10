@@ -8,6 +8,6 @@ content: >-
   gateways to ensure a smooth transaction and facilitate a simple shopping
   experience that will keep your customers coming back.
 arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
-image: /uploads/img2.png
+image: /uploads/online_payment-750x400.jpg
 ---
 
