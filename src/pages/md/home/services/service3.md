@@ -7,6 +7,6 @@ content: >-
   we offer user friendly data-base systems that are easily operated, fully
   secured, well organized, and firmly structured.
 arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
-image: /uploads/img1.png
+image: /uploads/2018-ai-safety-grants.jpg
 ---
 
