@@ -9,6 +9,6 @@ content: >-
   email services, and easy-access cloud servers. Along with effective SEO
   strategies, fully functioning recommender systems and comprehensive CRMS.
 arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
-image: /uploads/img2.png
+image: /uploads/post2.jpg
 ---
 
