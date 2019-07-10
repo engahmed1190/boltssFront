@@ -11,6 +11,6 @@ content: >-
   advanced voice recognition software with the option of a seperate webhook:
   it’s an employee you can depend on.
 arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
-image: /uploads/img2.png
+image: /uploads/gettyimages-874469172-5a72a730d8fdd500362e0a86.jpg
 ---
 
