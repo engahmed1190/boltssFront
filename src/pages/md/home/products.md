@@ -6,7 +6,7 @@ arabicTitle: منتجاتنا
 content: |-
   Technology has become inseparable from our daily lives. The world of
   technology never sleeps, from 5G and self-learning robots to quantum
-  computing and AI assistants, we&#39;re up to speed in an ever-changing
+  computing and AI assistants, we're up to speed in an ever-changing
   digitized era. We navigate the latest technologies to convert them to
   efficient products that you can seamlessly integrate into your business
   model:
