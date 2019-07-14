@@ -6,7 +6,10 @@ content: >-
   The hassle of chaotic data is a nuisance to most business owners, that’s why
   we offer user friendly data-base systems that are easily operated, fully
   secured, well organized, and firmly structured.
-arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
+arabicContent: >-
+  إن البيانات الفوضوية تشكل مصدر إزعاج دائم إلى أغلب أصحاب الأعمال التجارية،
+  لهذا نهدف لتوفير إستخدام أنظمة قاعدة بيانات تتسم بسهولة التشغيل والتأمين
+  الكامل والهيكل المنظم. 
 image: /uploads/2018-ai-safety-grants.jpg
 ---
 
