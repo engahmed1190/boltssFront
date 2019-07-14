@@ -9,7 +9,16 @@ content: >-
   abstract yet simple APIs that are easily integrated, marvel your customers
   with a smooth and comprehensive feel to your app! Transcend with your travel
   agency now!
-arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
+arabicContent: >
+  شركتك السياحية راكدة؟ هل لديك رغبة في تطبيق لشركة سياحة؟ إذن لقد جئت إلى
+  المكان الصحيح!
+
+  تستطيع بولت تزويدك بواجهات برمجة التطبيقات (APIs) فريدة من نوعها، لبناء
+  تطبيقات وأنظمة وكالات السياحة والسفر من الصفر. من خلال واجهات برمجة التطبيقات
+  (APIs) المجردة و البسيطة التي يمكن دمجها بسهولة ، يمكنك توفير تجربة متميزة
+  لعملائك عبر التعامل السهل والشامل لتطبيقك!
+
+  اسمو بوكالة سفرك فوق الجميع!
 image: /uploads/img1.png
 ---
 
