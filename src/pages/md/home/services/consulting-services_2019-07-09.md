@@ -7,7 +7,12 @@ content: >-
   but you lack proper execution? Our team is here to help! Bolt offers a tech
   savvy team of consultants to carefully enhance your business model, and guide
   you with the best tools, to superiority!
-arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
+arabicContent: >
+  لست متأكدا إذا كنت على الطريق الصحيح؟ عقلك ملئ بالأفكار الرائعة لكنك تفتقر
+  الإتمام الصحيح؟ فريقنا هنا للمساعدة!
+
+  يقدم لك بولت فريقا من الخبراء التقنيين لتحسين نموذج عملك، وإرشادك بأفضل
+  الأدوات الرقمية، نحو التفوق!
 image: /uploads/wifi-consulting-1024x478.jpg
 ---
 
