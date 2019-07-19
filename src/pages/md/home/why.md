@@ -18,6 +18,7 @@ arabicContent: >
   المعلومات من الطراز الأول لعملائنا الكرام.
    هدفنا هو ضمان توفير الوسائل المختلفة لإدارة عملية سلسة نحو النجاح المستمر.
   بإمكان أي شخص أن يعمل، ولَكِنَّ القليل يمكنهم أن يعملوا بإتقان.
-videoUrl: "https://www.youtube.com/embed/TdSA7gkVYU0"
-show: true
+videoUrl: 'https://www.youtube.com/embed/TdSA7gkVYU0'
+show: false
 ---
+
