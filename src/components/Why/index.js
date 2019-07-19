@@ -18,6 +18,7 @@ const Why = ({ lang = "en" }) => (
           videoUrl
           content
           arabicContent
+          show
         }
       }
     }
@@ -25,10 +26,10 @@ const Why = ({ lang = "en" }) => (
 }
     `}
     render={data => {
-      const { title, arabicTitle, content, arabicContent, videoUrl } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { title, arabicTitle, content, arabicContent, videoUrl,show } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
-        <Container className={`why-wrapper ${lang === "en" ? "" : "why-wrapper__ar"}`} id="why">
+        <Container className={`why-wrapper ${lang === "en" ? "" : "why-wrapper__ar"} ${show ? "" : "why-wrapper--hide"}`} id="why">
           <Row>
 
             <Col xs="12" md="6">

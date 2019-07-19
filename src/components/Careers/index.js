@@ -16,6 +16,7 @@ const Careers = ({ lang = "en" }) => (
           content
           arabicContent
           email
+          show
         }
       }
     }
@@ -23,13 +24,12 @@ const Careers = ({ lang = "en" }) => (
 }
     `}
     render={data => {
-      const {  content,
-arabicContent,
-email } = data.allMarkdownRemark.edges[0].node.frontmatter
+      const { content,
+        arabicContent,
+        email, show } = data.allMarkdownRemark.edges[0].node.frontmatter
 
       return (
-
-        <Container className={`careers-wrapper ${lang === "en" ? "" : "careers-wrapper__ar"}`} id="careers">
+        <Container className={`careers-wrapper ${lang === "en" ? "" : "careers-wrapper__ar"} ${show ? "" : "careers-wrapper--hide"}`} id="careers">
           <Row className="text-center">
             <Col xs="12">
               <h1 className="careers-wrapper__heading">{lang === "en" ? "CAREERS" : "الوظائف"}</h1>

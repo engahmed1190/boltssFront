@@ -4,6 +4,9 @@
 .careers-wrapper {
   padding-top: 81px !important;
   text-align: left;
+  &--hide{
+    display: none;
+  }
 
   &__ar {
     direction: rtl;
@@ -16,7 +19,7 @@
   &__body {
     height: 30%;
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 22px;
     line-height: 50px;
     @include is-mobile {
       font-size: 16px;

@@ -4,6 +4,10 @@
 .projects-wrapper {
   padding-top: 81px !important;
   text-align: left;
+  &--hide {
+    display: none;
+  }
+
   @include is-mobile {
     padding-top: 56px !important;
   }
@@ -16,7 +20,7 @@
     color: black;
   }
   &__body {
-    font-size: 20px;
+    font-size: 22px;
     color: black;
     @include is-mobile {
       font-size: 16px;
@@ -31,7 +35,7 @@
     border-top-right-radius: calc(0.25rem - 1px);
     vertical-align: middle;
     border-style: none;
-    height: 150px;
+    height: 300px;
   }
   &__card-text-heading {
     font-weight: bold;

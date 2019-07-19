@@ -24,6 +24,7 @@ const Projects = ({ lang = "en" }) => (
           content
           arabicTitle          
           arabicContent
+          show
           image{
               childImageSharp {
                 fluid(maxWidth: 700) {
@@ -45,7 +46,7 @@ const Projects = ({ lang = "en" }) => (
       const projects = data.allMarkdownRemark.edges.slice(1, data.allMarkdownRemark.edges.length)
 
       return (
-        <Container className={`projects-wrapper ${lang === "en" ? "" : "projects-wrapper__ar"}`} id="projects">
+        <Container className={`projects-wrapper ${lang === "en" ? "" : "projects-wrapper__ar"} ${headingData.show ? "" : "projects-wrapper--hide"}`} id="projects">
           <Row>
             <Col xs="12">
               <h2 className="projects-wrapper__heading">{lang === "en" ? headingData.title.toUpperCase() : headingData.arabicTitle}</h2>
@@ -55,7 +56,7 @@ const Projects = ({ lang = "en" }) => (
             <Col xs="12">
               <Row className="justify-content-center">
                 {projects.map((project, index) => (
-                  <Col xs="12" md="3" key={index}>
+                  <Col xs="12" md="4" key={index}>
                     <Card className="mb-2">
                       <div
                         className="projects-wrapper__card-img"

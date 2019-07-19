@@ -17,6 +17,7 @@ const Products = ({ lang = "en" }) => (
           content
           arabicTitle                    
           arabicContent
+          show
           image{
               childImageSharp {
                 fluid(maxWidth: 700) {
@@ -38,7 +39,7 @@ const Products = ({ lang = "en" }) => (
       const products = data.allMarkdownRemark.edges.slice(1, data.allMarkdownRemark.edges.length)
 
       return (
-        <Container className={`products-wrapper ${lang === "en" ? "" : "products-wrapper__ar"}`} id="products">
+        <Container className={`products-wrapper ${lang === "en" ? "" : "products-wrapper__ar"} ${headingData.show ? "" : "products-wrapper--hide"}`} id="products">
           <Row>
             <Col xs="12">
               <h2 className="products-wrapper__heading">{lang === "en" ? headingData.title.toUpperCase() : headingData.arabicTitle}</h2>
@@ -51,14 +52,16 @@ const Products = ({ lang = "en" }) => (
                   <Col
                     key={index}
                     xs="12"
-                    md="3"
-                    className="text-center products-wrapper__text"
+                    md="4"
+                    className="text-center products-wrapper__text-wrapper"
                   >
                     <Img
                       fluid={product.node.frontmatter.image.childImageSharp.fluid}
                       className="products-wrapper__image"
                     />
-                    {lang === "en" ? product.node.frontmatter.content : product.node.frontmatter.arabicContent}
+                    <span className="products-wrapper__text">
+                      {lang === "en" ? product.node.frontmatter.content : product.node.frontmatter.arabicContent}
+                    </span>
                   </Col>
                 ))}
               </Row>

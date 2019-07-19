@@ -3,6 +3,9 @@
 .why-wrapper {
   padding-top: 81px !important;
   text-align: left;
+  &--hide{
+    display: none;
+  }
 
   &__ar {
     direction: rtl;
@@ -12,7 +15,7 @@
     font-weight: bold;
   }
   &__body {
-    font-size: 20px;
+    font-size: 22px;
     @include is-mobile {
       font-size: 16px;
     }

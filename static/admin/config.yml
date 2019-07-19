@@ -16,10 +16,10 @@ collections:
     slug: "{{title}}_{{year}}-{{month}}-{{day}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {
-            label: "Date",
-            name: "date",
-            widget: "hidden",
-            default: '{{year}}-{{month}}-{{day}}'
+          label: "Date",
+          name: "date",
+          widget: "hidden",
+          default: "{{year}}-{{month}}-{{day}}",
         }
       - {
           label: "Section",
@@ -29,8 +29,13 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Content", name: "content", widget: "string", required: true }
-      - { label: "Arabic Content", name: "arabicContent", widget: "text", required: true }
-      - { label: "Image", name: "image", widget: "image", required: true }        
+      - {
+          label: "Arabic Content",
+          name: "arabicContent",
+          widget: "text",
+          required: true,
+        }
+      - { label: "Image", name: "image", widget: "image", required: true }
 
   - name: "projects" # Used in routes, e.g., /admin/collections/blog
     label: "Projects" # Used in the UI
@@ -39,10 +44,10 @@ collections:
     slug: "{{title}}_{{year}}-{{month}}-{{day}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {
-            label: "Date",
-            name: "date",
-            widget: "hidden",
-            default: '{{year}}-{{month}}-{{day}}'
+          label: "Date",
+          name: "date",
+          widget: "hidden",
+          default: "{{year}}-{{month}}-{{day}}",
         }
       - {
           label: "Section",
@@ -50,11 +55,16 @@ collections:
           widget: "hidden",
           default: "projects",
         }
-      - { label: "Title", name: "title", widget: "string", required: true }            
-      - { label: "Content", name: "content", widget: "string", required: true }            
-      - { label: "Arabic Content", name: "arabicContent", widget: "string", required: true }            
-      - { label: "Image", name: "image", widget: "image", required: true }        
-      
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Content", name: "content", widget: "string", required: true }
+      - {
+          label: "Arabic Content",
+          name: "arabicContent",
+          widget: "string",
+          required: true,
+        }
+      - { label: "Image", name: "image", widget: "image", required: true }
+
   - name: "products" # Used in routes, e.g., /admin/collections/blog
     label: "Products" # Used in the UI
     folder: "src/pages/md/home/products/" # The path to the folder where the documents are stored
@@ -62,27 +72,26 @@ collections:
     slug: "{{title}}_{{year}}-{{month}}-{{day}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {
-            label: "Date",
-            name: "date",
-            widget: "hidden",
-            default: '{{year}}-{{month}}-{{day}}'
-          }
+          label: "Date",
+          name: "date",
+          widget: "hidden",
+          default: "{{year}}-{{month}}-{{day}}",
+        }
       - {
           label: "Section",
           name: "section",
           widget: "hidden",
           default: "products",
         }
-      - { label: "Title", name: "title", widget: "string", required: true }      
-      - { label: "Content", name: "content", widget: "string", required: true }      
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Content", name: "content", widget: "string", required: true }
       - {
           label: "Arabic Content",
           name: "arabicContent",
           widget: "string",
           required: true,
         }
-      - { label: "Image", name: "image", widget: "image", required: true }  
-      
+      - { label: "Image", name: "image", widget: "image", required: true }
 
   - name: "partners" # Used in routes, e.g., /admin/collections/blog
     label: "Partners" # Used in the UI
@@ -103,7 +112,7 @@ collections:
     label: "Headings"
     files:
       - label: "Why"
-        name: "why"
+        name: "why-heading"
         file: "src/pages/md/home/why.md"
         fields: # The fields for each document, usually in front matter
           - {
@@ -137,7 +146,14 @@ collections:
               widget: "string",
               required: true,
             }
-      - name: "contact" # Used in routes, e.g., /admin/collections/blog
+          - {
+              label: "Show Section",
+              name: "show",
+              widget: "boolean",
+              required: true,
+            }
+
+      - name: "contact-heading" # Used in routes, e.g., /admin/collections/blog
         label: "Contact" # Used in the UI
         file: "src/pages/md/home/contact.md"
         fields: # The fields for each document, usually in front matter
@@ -150,15 +166,20 @@ collections:
           - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Email", name: "email", widget: "string", required: true }
           - { label: "Phone", name: "phone", widget: "string", required: true }
-          - { label: "Address", name: "address", widget: "string", required: true }
+          - {
+              label: "Address",
+              name: "address",
+              widget: "string",
+              required: true,
+            }
           - {
               label: "Arabic Address",
               name: "arabicAddress",
               widget: "string",
               required: true,
             }
-                
-      - name: "careers" # Used in routes, e.g., /admin/collections/blog
+
+      - name: "careers-heading" # Used in routes, e.g., /admin/collections/blog
         label: "Careers" # Used in the UI
         file: "src/pages/md/home/careers.md"
         fields: # The fields for each document, usually in front matter
@@ -168,20 +189,31 @@ collections:
               widget: "hidden",
               default: "careers",
             }
-          - { label: "Content", name: "content", widget: "string", required: true }
-          - { label: "Arabic Content", name: "arabicContent", widget: "string", required: true }
-          - { label: "Email", name: "email", widget: "string", required: true }           
+          - {
+              label: "Content",
+              name: "content",
+              widget: "string",
+              required: true,
+            }
+          - {
+              label: "Arabic Content",
+              name: "arabicContent",
+              widget: "string",
+              required: true,
+            }
+          - { label: "Email", name: "email", widget: "string", required: true }
+          - {
+              label: "Show Section",
+              name: "show",
+              widget: "boolean",
+              required: true,
+            }
 
       - name: "products-heading" # Used in routes, e.g., /admin/collections/blog
         label: "Products Heading" # Used in the UI
         file: "src/pages/md/home/products.md"
         fields: # The fields for each document, usually in front matter
-          - {
-              label: "Date",
-              name: "date",
-              widget: "hidden",
-              default: '0'
-            }
+          - { label: "Date", name: "date", widget: "hidden", default: "0" }
           - {
               label: "Section",
               name: "section",
@@ -195,24 +227,30 @@ collections:
               widget: "string",
               required: true,
             }
-          - { label: "Content", name: "content", widget: "text", required: true }
+          - {
+              label: "Content",
+              name: "content",
+              widget: "text",
+              required: true,
+            }
           - {
               label: "Arabic Content",
               name: "arabicContent",
               widget: "text",
               required: true,
-            } 
+            }
+          - {
+              label: "Show Section",
+              name: "show",
+              widget: "boolean",
+              required: true,
+            }
 
       - name: "projects-heading" # Used in routes, e.g., /admin/collections/blog
         label: "Projects Heading" # Used in the UI
         file: "src/pages/md/home/projects.md"
         fields: # The fields for each document, usually in front matter
-          - {
-              label: "Date",
-              name: "date",
-              widget: "hidden",
-              default: '0'
-            }
+          - { label: "Date", name: "date", widget: "hidden", default: "0" }
           - {
               label: "Section",
               name: "section",
@@ -226,24 +264,30 @@ collections:
               widget: "string",
               required: true,
             }
-          - { label: "Content", name: "content", widget: "text", required: true }
+          - {
+              label: "Content",
+              name: "content",
+              widget: "text",
+              required: true,
+            }
           - {
               label: "Arabic Content",
               name: "arabicContent",
               widget: "text",
               required: true,
-            } 
+            }
+          - {
+              label: "Show Section",
+              name: "show",
+              widget: "boolean",
+              required: true,
+            }
 
       - name: "services-heading" # Used in routes, e.g., /admin/collections/blog
         label: "Services Heading" # Used in the UI
         file: "src/pages/md/home/services.md"
         fields: # The fields for each document, usually in front matter
-          - {
-              label: "Date",
-              name: "date",
-              widget: "hidden",
-              default: '0'
-            }
+          - { label: "Date", name: "date", widget: "hidden", default: "0" }
           - {
               label: "Section",
               name: "section",
@@ -257,10 +301,33 @@ collections:
               widget: "string",
               required: true,
             }
-          - { label: "Content", name: "content", widget: "text", required: true }
+          - {
+              label: "Content",
+              name: "content",
+              widget: "text",
+              required: true,
+            }
           - {
               label: "Arabic Content",
               name: "arabicContent",
               widget: "text",
               required: true,
-            } 
+            }
+          - {
+              label: "Show Section",
+              name: "show",
+              widget: "boolean",
+              required: true,
+            }
+
+      - name: "slogan-heading" # Used in routes, e.g., /admin/collections/blog
+        label: "Slogan Heading" # Used in the UI
+        file: "src/pages/md/home/slogan.md"
+        fields: # The fields for each document, usually in front matter
+          - {
+              label: "Section",
+              name: "section",
+              widget: "hidden",
+              default: "slogan",
+            }
+          - { label: "Title", name: "title", widget: "string", required: true }

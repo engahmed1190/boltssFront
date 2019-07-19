@@ -61,7 +61,7 @@ const Footer = ({ lang = "en" }) => (
             <Row>
               <Col xs="12">
                 <Row>
-                  <Col xs="12" md="6">
+                  <Col xs="12" md="4">
                     <img src={logo} alt="logo" style={{ marginTop: "8px" }} />
                     <div className="footer-wrapper__data">
                       <div className="footer-wrapper__data__contact">
@@ -80,15 +80,14 @@ const Footer = ({ lang = "en" }) => (
                     </div>
 
                   </Col>
-                  <Col xs="12" md="6">
+                  <Col xs="12" md="8">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.8453052099494!2d31.291789015114485!3d30.012597981893887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAwJzQ1LjQiTiAzMcKwMTcnMzguMyJF!5e0!3m2!1sen!2seg!4v1560992371265!5m2!1sen!2seg" width="400" height="300" frameBorder="0" style={{ width: "100%", margin: "24px 0" }} allowFullScreen></iframe>
                   </Col>
                 </Row>
               </Col>
               <Col xs="12">
                 <Row>
-                  <Col xs="12" md="6">
-
+                  <Col xs="12" md="4">
                     <div className="footer-wrapper__data__social-media">
                       <div className="footer-icon-button" role="button" onClick={() => redirectToSocialMedia("facebook")}>
                         <img
@@ -120,7 +119,7 @@ const Footer = ({ lang = "en" }) => (
                       </div>
                     </div>
                   </Col>
-                  <Col xs="12" md="6">
+                  <Col xs="12" md="8">
                     <div className="footer-wrapper__data__info">
                       <div className="footer-wrapper__data__info__item">
                         <strong>{lang === "en" ? "Email" : "البريد الالكترونى"}</strong>

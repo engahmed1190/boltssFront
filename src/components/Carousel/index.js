@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticQuery, graphql } from "gatsby"
 // import { Button } from "reactstrap";
 import Slider from "react-slick";
 import slide1 from "../../assets/images/slide1.png";
@@ -29,71 +30,93 @@ function redirectToSocialMedia(website) {
   }
 }
 
-const Carousel = ({ lang = "en" }) => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 4000
-  };
-  return (
-    <div id="home" className="carousel-wrapper">
-      <div className="carousel">
-        <Slider {...settings}>
-          <img src={slide1} alt="slide1" className="home-slide-image" />
-          <img src={slide2} alt="slide2" className="home-slide-image" />
-        </Slider>
-      </div>
-      <div className="hero-data">
-        <div className="hero-data__section">
-          <h1>
-            We're Leading in
-            <br /> smart Technology
-          </h1>
-          {/* <Button color="primary" size="lg">
-            {lang === "en" ? "About Us" : "من نحن"}
-          </Button>
-          <Button color="warning" size="lg" className="hero-data__cta">
-            {lang === "en" ? "CTA" : "CTA"}
-          </Button> */}
+const Carousel = ({ lang = "en" }) => (
+  <StaticQuery
+    query={graphql`
+      query SloganQuery {
+  allMarkdownRemark(filter: {frontmatter: {section: {eq: "slogan"}}}) {
+    edges {
+      node {
+        id
+        frontmatter {
+          title                  
+        }
+      }
+    }
+  }
+}
+    `}
+
+    render={data => {
+      const sloganData = data.allMarkdownRemark.edges[0].node.frontmatter;
+      const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        arrows: false,
+        autoplaySpeed: 4000
+      };
+      return (
+        <div id="home" className="carousel-wrapper">
+          <div className="carousel">
+            <Slider {...settings}>
+              <img src={slide1} alt="slide1" className="home-slide-image" />
+              <img src={slide2} alt="slide2" className="home-slide-image" />
+            </Slider>
+          </div>
+          <div className="hero-data">
+            <div className="hero-data__section">
+              <h1>
+                {sloganData.title}
+              </h1>
+              {/* <Button color="primary" size="lg">
+              {lang === "en" ? "About Us" : "من نحن"}
+            </Button>
+            <Button color="warning" size="lg" className="hero-data__cta">
+              {lang === "en" ? "CTA" : "CTA"}
+            </Button> */}
+            </div>
+          </div>
+          <div className="social-media-wrapper">
+            <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("facebook")}>
+              <img
+                src={facebookIcon}
+                alt="facebook icon"
+                className="icon-button__icon"
+              />
+            </div>
+            <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("twitter")}>
+              <img
+                src={twitterIcon}
+                alt="twitter icon"
+                className="icon-button__icon"
+              />
+            </div>
+            <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("linkedin")}>
+              <img
+                src={linkedinIcon}
+                alt="linkedin icon"
+                className="icon-button__icon"
+              />
+            </div>
+            <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("youtube")}>
+              <img
+                src={youtubeIcon}
+                alt="youtube icon"
+                className="icon-button__icon"
+              />
+            </div>
+          </div>
+          <a href="#why" className="scroll-down" address="true" />
         </div>
-      </div>
-      <div className="social-media-wrapper">
-        <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("facebook")}>
-          <img
-            src={facebookIcon}
-            alt="facebook icon"
-            className="icon-button__icon"
-          />
-        </div>
-        <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("twitter")}>
-          <img
-            src={twitterIcon}
-            alt="twitter icon"
-            className="icon-button__icon"
-          />
-        </div>
-        <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("linkedin")}>
-          <img
-            src={linkedinIcon}
-            alt="linkedin icon"
-            className="icon-button__icon"
-          />
-        </div>
-        <div className="icon-button" role="button" onClick={() => redirectToSocialMedia("youtube")}>
-          <img
-            src={youtubeIcon}
-            alt="youtube icon"
-            className="icon-button__icon"
-          />
-        </div>
-      </div>
-      <a href="#why" className="scroll-down" address="true" />
-    </div>
-  );
-};
+      );
+    }
+    }
+
+
+  />
+);
 export default Carousel;

@@ -18,6 +18,7 @@ const Services = ({ lang = "en" }) => (
           content
           arabicTitle                    
           arabicContent
+          show
           image{
               childImageSharp {
                 fluid(maxWidth: 700) {
@@ -40,7 +41,7 @@ const Services = ({ lang = "en" }) => (
 
 
       return (
-        <Container className={`services-wrapper ${lang === "en" ? "" : "services-wrapper__ar"}`} id="services">
+        <Container className={`services-wrapper ${lang === "en" ? "" : "services-wrapper__ar"} ${headingData.show ? "" : "services-wrapper--hide"}`} id="services">
 
           <Row>
             <Col xs="12">
@@ -54,14 +55,16 @@ const Services = ({ lang = "en" }) => (
                   <Col
                     key={index}
                     xs="12"
-                    md="3"
-                    className="text-center services-wrapper__text"
+                    md="4"
+                    className="text-center services-wrapper__text-wrapper"
                   >
                     <Img
                       fluid={service.node.frontmatter.image.childImageSharp.fluid}
                       className="services-wrapper__image"
-                    />
+                    />                    
+                    <span className="services-wrapper__text">
                     {lang === "en" ? service.node.frontmatter.content : service.node.frontmatter.arabicContent}
+                    </span>
                   </Col>
 
                 ))}
