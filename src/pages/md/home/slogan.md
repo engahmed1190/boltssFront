@@ -1,5 +1,5 @@
 ---
 section: slogan
-title: We're Leading in Smart Technology
+title: 'Where Innovation Meets Excellence '
 ---
 
