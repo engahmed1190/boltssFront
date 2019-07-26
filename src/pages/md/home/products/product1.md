@@ -11,6 +11,6 @@ arabicContent: >-
   تطبيقات الهواتف المحمولة في ارتفاع مزدهر. في بولت، سنجلب أفكارك للحياة من خلال
   تطبيقات متنقلة ، سهلة الاستخدام ، مفصلة لعملائك.
 image: /uploads/img1.png
-file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
+file: ''
 ---
 
