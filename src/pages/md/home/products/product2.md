@@ -18,5 +18,6 @@ arabicContent: >-
   داعمة، ونظام التعرف على الكلام، مع خيار ويب هوك منفرد: إنه موظف يمكنك الاعتماد
   عليه.
 image: /uploads/gettyimages-874469172-5a72a730d8fdd500362e0a86.jpg
+file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
 ---
 

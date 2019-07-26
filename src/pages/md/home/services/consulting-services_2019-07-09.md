@@ -14,5 +14,6 @@ arabicContent: >
   يقدم لك بولت فريقا من الخبراء التقنيين لتحسين نموذج عملك، وإرشادك بأفضل
   الأدوات الرقمية، نحو التفوق!
 image: /uploads/wifi-consulting-1024x478.jpg
+file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
 ---
 

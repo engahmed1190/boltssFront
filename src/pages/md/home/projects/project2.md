@@ -7,5 +7,6 @@ content: >-
   card's content.
 arabicContent: لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم
 image: /uploads/file-20170523-5790-1r78wli.jpg
+file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
 ---
 

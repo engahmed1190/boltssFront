@@ -12,5 +12,6 @@ arabicContent: >
   الإلكترونية، في بولت، نحن نصمم بوابات دفع إلكترونية سهلة الاستخدام لضمان سلاسة
   المعاملات وتبسيط تجربة التسوق، التي تضمن لك عودة عملائك مرة أخرى.
 image: /uploads/online_payment-750x400.jpg
+file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
 ---
 

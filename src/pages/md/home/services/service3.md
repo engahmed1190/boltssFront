@@ -11,5 +11,6 @@ arabicContent: >-
   لهذا نهدف لتوفير إستخدام أنظمة قاعدة بيانات تتسم بسهولة التشغيل والتأمين
   الكامل والهيكل المنظم. 
 image: /uploads/2018-ai-safety-grants.jpg
+file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
 ---
 

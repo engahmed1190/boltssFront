@@ -20,5 +20,6 @@ arabicContent: >
 
   اسمو بوكالة سفرك فوق الجميع!
 image: /uploads/img1.png
+file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
 ---
 
