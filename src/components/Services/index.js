@@ -85,7 +85,7 @@ class Services extends Component {
                             </CardTitle>
                             <CardText className="services-wrapper__text">
                               {lang === "en" ? service.node.frontmatter.content : service.node.frontmatter.arabicContent}
-                              {service.node.frontmatter.file === "undefined" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${service.node.frontmatter.file}`} download>Download</a></span>)}
+                              {service.node.frontmatter.file === "" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${service.node.frontmatter.file}`} download>Download</a></span>)}
                             </CardText>
                           </Card>
 
@@ -120,7 +120,7 @@ class Services extends Component {
                             </CardTitle>
                             <CardText className="services-wrapper__text">
                               {lang === "en" ? service.node.frontmatter.content : service.node.frontmatter.arabicContent}
-                              {service.node.frontmatter.file === "undefined" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${service.node.frontmatter.file}`} download>Download</a></span>)}
+                              {service.node.frontmatter.file === "" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${service.node.frontmatter.file}`} download>Download</a></span>)}
                             </CardText>
                           </Card>
 

@@ -36,7 +36,7 @@ collections:
           required: true,
         }
       - { label: "Image", name: "image", widget: "image", required: true }
-      - { label: "Pdf File ID", name: "file", widget: "string", required: false,default: 'undefined' }
+      - { label: "Pdf File ID", name: "file", widget: "string", required: false,default: '' }
 
   - name: "projects" # Used in routes, e.g., /admin/collections/blog
     label: "Projects" # Used in the UI
@@ -65,7 +65,7 @@ collections:
           required: true,
         }
       - { label: "Image", name: "image", widget: "image", required: true }
-      - { label: "Pdf File ID", name: "file", widget: "string", required: false,default: 'undefined' }
+      - { label: "Pdf File ID", name: "file", widget: "string", required: false,default: '' }
 
   - name: "products" # Used in routes, e.g., /admin/collections/blog
     label: "Products" # Used in the UI
@@ -94,7 +94,7 @@ collections:
           required: true,
         }
       - { label: "Image", name: "image", widget: "image", required: true }
-      - { label: "Pdf File ID", name: "file", widget: "string", required: false,default: 'undefined' }
+      - { label: "Pdf File ID", name: "file", widget: "string", required: false,default: '' }
 
   - name: "partners" # Used in routes, e.g., /admin/collections/blog
     label: "Partners" # Used in the UI

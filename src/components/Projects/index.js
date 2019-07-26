@@ -85,7 +85,7 @@ class Projects extends Component {
                               </CardTitle>
                               <CardText>
                                 {lang === "en" ? project.node.frontmatter.content : project.node.frontmatter.arabicContent}
-                                {project.node.frontmatter.file === "undefined" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${project.node.frontmatter.file}`} download>Download</a></span>)}
+                                {project.node.frontmatter.file === "" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${project.node.frontmatter.file}`} download>Download</a></span>)}
                               </CardText>
                             </CardBody>
                           </Card>
@@ -121,7 +121,7 @@ class Projects extends Component {
                               </CardTitle>
                               <CardText>
                                 {lang === "en" ? project.node.frontmatter.content : project.node.frontmatter.arabicContent}
-                                {project.node.frontmatter.file === "undefined" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${project.node.frontmatter.file}`} download>Download</a></span>)}
+                                {project.node.frontmatter.file === "" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${project.node.frontmatter.file}`} download>Download</a></span>)}
                               </CardText>
                             </CardBody>
                           </Card>

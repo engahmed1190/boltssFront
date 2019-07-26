@@ -85,7 +85,7 @@ class Products extends Component {
                             </CardTitle>
                             <CardText className="products-wrapper__text">
                               {lang === "en" ? product.node.frontmatter.content : product.node.frontmatter.arabicContent}
-                              {product.node.frontmatter.file === "undefined" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${product.node.frontmatter.file}`} download>Download</a></span>)}
+                              {product.node.frontmatter.file === "" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${product.node.frontmatter.file}`} download>Download</a></span>)}
                             </CardText>
                           </Card>
 
@@ -120,7 +120,7 @@ class Products extends Component {
                             </CardTitle>
                             <CardText className="products-wrapper__text">
                               {lang === "en" ? product.node.frontmatter.content : product.node.frontmatter.arabicContent}
-                              {product.node.frontmatter.file === "undefined" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${product.node.frontmatter.file}`} download>Download</a></span>)}
+                              {product.node.frontmatter.file === "" ? "" : (<span><br /><a href={`https://docs.google.com/uc?export=download&id=${product.node.frontmatter.file}`} download>Download</a></span>)}
                             </CardText>
                           </Card>
 
