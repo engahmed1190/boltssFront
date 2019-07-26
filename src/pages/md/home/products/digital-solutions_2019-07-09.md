@@ -15,6 +15,6 @@ arabicContent: >-
   الوصول، جنبا إلى جنب مع استراتيجيات تحسين محركات البحث الفعالة(SEO) ، ونظام
   التوصية عالي الكفاءة وبرامج إدارة علاقات العملاء الشاملة(CRM)
 image: /uploads/post2.jpg
-file: undefined
+file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
 ---
 
