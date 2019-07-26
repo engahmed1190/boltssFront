@@ -11,7 +11,10 @@ import {
 import "./index.scss";
 
 class Products extends Component {
-  state = { activeItemIndex: 0 };
+  state = { activeItemIndex: 0, isMobileView: false };
+  componentDidMount() {
+    this.setState({ isMobileView: this.detectScreenWidthChange() })
+  }
   detectScreenWidthChange = () =>
     window.matchMedia("(max-width: 767px)").matches;
   render() {
@@ -51,7 +54,7 @@ class Products extends Component {
         render={data => {
           const headingData = data.allMarkdownRemark.edges[0].node.frontmatter;
           const products = data.allMarkdownRemark.edges.slice(1, data.allMarkdownRemark.edges.length)
-
+          const { isMobileView } = this.state;
           return (
             <Container className={`products-wrapper ${lang === "en" ? "" : "products-wrapper__ar"}`} id="products">
               <Row>
@@ -62,7 +65,7 @@ class Products extends Component {
                 </Col>
                 <Col xs="12" className={`${headingData.show ? "" : "products-wrapper--hide"}`}>
                   <Row className="justify-content-center">
-                    {this.detectScreenWidthChange() ?
+                    {isMobileView ?
                       products.map((product, index) => (
                         <Col
                           key={index}
