@@ -1,6 +1,6 @@
 ---
 section: partners
-title: codid
+title: WasilaDev
 logo: /uploads/wasila.png
 ---
 
