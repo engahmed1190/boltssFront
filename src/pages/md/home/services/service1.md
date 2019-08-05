@@ -19,7 +19,7 @@ arabicContent: >
   لعملائك عبر التعامل السهل والشامل لتطبيقك!
 
   اسمو بوكالة سفرك فوق الجميع!
-image: /uploads/img1.png
+image: /uploads/travel_baner_image.png
 file: 1zDMIRGBkFk_XFnSnZG7pBjC4m2l8K9BK
 ---
 
